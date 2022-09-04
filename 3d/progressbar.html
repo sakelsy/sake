@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="progressbar">
+            <div class="bar" style="width: 556px;">
+                <span></span>
+            </div>
+            <div class="lable">
+                <span></span>
+                <div class="nt">100%</div>
+            </div>
+        </div>
+        <div class="progressbar">
+            <div class="bar bar2" style="width: 417px;">
+                <span></span>
+            </div>
+            <div class="lable lable2">
+                <span></span>
+                <div class="nt">75%</div>
+            </div>
+        </div>
+        <div class="progressbar">
+            <div class="bar bar3" style="width: 270px;">
+                <span></span>
+            </div>
+            <div class="lable lable3">
+                <span></span>
+                <div class="nt">50%</div>
+            </div>
+        </div>
+        <div class="progressbar">
+            <div class="bar bar4" style="width: 150px;">
+                <span></span>
+            </div>
+            <div class="lable lable4">
+                <span></span>
+                <div class="nt">25%</div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .stage {
+            width: 1000px;
+            margin: 0 auto;
+
+        }
+
+        body {
+            background-color: #333;
+        }
+
+        .progressbar {
+            position: relative;
+            display: block;
+            width: 560px;
+            height: 20px;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
+            margin: 40px auto;
+            /* background-color: rgb(42 42 42); */
+            box-shadow: 0px 4px 4px -4px rgb(255 255 255 / 40%), 0px -3px 3px -3px rgb(255 255 255 / 25%), inset 0px 0px 12px 0px rgb(0 0 0 / 50%)
+        }
+
+        .progressbar::before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 558px;
+            height: 18px;
+            top: 10px;
+            left: 20px;
+            border-radius: 20px;
+            background: #222;
+        }
+
+        .bar::before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 606px;
+            height: 150%;
+            top: -25%;
+            left: -25px;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.01) 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .bar {
+            position: absolute;
+            display: block;
+            height: 16px;
+            top: 10.5px;
+            left: 21px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 12px 0px rgb(126 234 25), inset 0px 1px 0px 0px rgb(255 255 255 / 45%), inset 1px 0px 0px 0px rgb(255 255 255 / 25%), inset -1px 0px 0px 0px rgb(255 255 255 / 25%);
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(126, 234, 25, 1) 0%, rgba(83, 173, 0, 1) 100%);
+        }
+
+        .bar span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 32px;
+            border-radius: 16px;
+            top: 0;
+            left: 0;
+            background-image: url("./img/download.png");
+            background-position: center;
+            opacity: 0.2;
+            overflow: hidden;
+            animation: xx 1.5s linear infinite;
+        }
+
+        .bar::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 64px;
+            height: 16px;
+            top: 1px;
+            right: -1px;
+            border-radius: 20px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 98%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        @keyframes xx {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 0 -64px;
+            }
+        }
+
+        .lable {
+            position: absolute;
+            left: 554px;
+            width: 40px;
+            height: 30px;
+            top: 38px;
+            line-height: 30px;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, rgba(76, 76, 76, 1) 0%, rgba(38, 38, 38, 1) 100%);
+        }
+
+        .lable span {
+            position: absolute;
+            display: block;
+            width: 12px;
+            height: 9px;
+            top: -9px;
+            left: 14px;
+            background: transparent;
+        }
+
+        .lable span::before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 8px;
+            height: 8px;
+            top: 6px;
+            left: 2px;
+            background: linear-gradient(135deg, rgba(86, 86, 86, 1) 0%, rgba(76, 76, 76, 1) 50%);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            transform: rotate(45deg);
+            border: none;
+        }
+
+        .nt {
+            position: absolute;
+            left: 5px;
+            font-size: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .bar2 {
+            background: linear-gradient(to bottom, rgba(229, 195, 25, 1) 0%, rgba(168, 140, 0, 1) 100%);
+            box-shadow: 0px 0px 12px 0px rgb(229 195 25), inset 0px 1px 0px 0px rgb(255 255 255 / 45%), inset 1px 0px 0px 0px rgb(255 255 255 / 25%), inset -1px 0px 0px 0px rgb(255 255 255);
+        }
+
+        .lable2 {
+            left: 417px;
+        }
+
+        .bar3 {
+            box-shadow: 0px 0px 12px 0px rgb(232 25 87), inset 0px 1px 0px 0px rgb(255 255 255 / 45%), inset 1px 0px 0px 0px rgb(255 255 255 / 25%), inset -1px 0px 0px 0px rgb(255 255 255);
+            background : linear-gradient(to bottom, rgba(232, 25, 87, 1) 0%, rgba(170, 0, 51, 1) 100%);
+        }
+
+        .lable3 {
+            left: 270px;
+        }
+
+        .bar4 {
+            box-shadow: 0px 0px 12px 0px rgb(24 109 226), inset 0px 1px 0px 0px rgb(255 255 255 / 45%), inset 1px 0px 0px 0px rgb(255 255 255 / 25%), inset -1px 0px 0px 0px rgb(255 255 255 / 25%);
+            background: linear-gradient(to bottom, rgba(24, 109, 226, 1) 0%, rgba(0, 69, 165, 1) 100%);
+        }
+
+        .lable4 {
+            left: 150px;
+        }
+
+
+    </style>
+
+</body>
+
+</html>
