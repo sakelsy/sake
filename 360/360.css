@@ -1,0 +1,293 @@
+body {
+  color: white;
+  background-color: #010001;
+  position: relative;
+}
+.screen {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.screen .dots {
+  position: absolute;
+  z-index: 10;
+  top: 260px;
+  left: 1452px;
+  width: 10px;
+  height: 30px;
+}
+.screen .dots li {
+  width: 5px;
+  height: 5px;
+  margin-bottom: 20px;
+  background-color: grey;
+  border-radius: 50%;
+}
+.top {
+  height: 48px;
+  background-color: #010001;
+  display: flex;
+  position: fixed;
+  justify-content: space-around;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.top .left {
+  margin-top: 10px;
+}
+.top .right {
+  margin-left: 1000px;
+}
+.top .right span a {
+  text-decoration: none;
+  color: #A4A4A4;
+  margin-left: 40px;
+  line-height: 48px;
+}
+.first {
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-image: url(img/top.png);
+  transition: all 0.3s;
+}
+.first .a {
+  position: absolute;
+  top: 150px;
+  left: 250px;
+  animation: xx 2s linear infinite alternate;
+}
+.first .b {
+  position: absolute;
+  top: 375px;
+  left: 886px;
+  animation: xx 2s linear infinite alternate;
+}
+.first .c {
+  position: absolute;
+  top: 233px;
+  left: 902px;
+}
+.first .content1 {
+  position: absolute;
+  top: 290px;
+  left: 401px;
+  color: white;
+  text-align: center;
+}
+.first .content1 h3 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+.first .content1 p {
+  margin-top: 20px;
+  opacity: 0.8;
+  font-size: 20px;
+}
+.first .content1 .control {
+  margin-top: 30px;
+}
+.first .content1 .control button {
+  width: 180px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #FFF;
+  margin: 0 16px;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+}
+.first .content1 .control .aa {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 180px;
+  height: 60px;
+  border-radius: 30px;
+  margin: 0 16px;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: #FFF;
+}
+@keyframes xx {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+.second {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transition: all 0.3s;
+}
+.second .content {
+  position: absolute;
+  color: #FFF;
+  top: 255px;
+  left: 265px;
+  display: none;
+}
+.second .content h2 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.second .content .line {
+  width: 34px;
+  height: 4px;
+  background-color: #888484;
+  margin-bottom: 20px;
+}
+.second .content h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.second .content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.second .content button {
+  padding: 20px 50px;
+  border-radius: 30px;
+  border: 1px solid white;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+}
+.three {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transition: all 0.3s;
+}
+.three .content {
+  position: absolute;
+  color: #FFF;
+  top: 255px;
+  left: 265px;
+  display: none;
+}
+.three .content h2 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.three .content .line {
+  width: 34px;
+  height: 4px;
+  background-color: #888484;
+  margin-bottom: 20px;
+}
+.three .content h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.three .content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.three .content button {
+  padding: 20px 50px;
+  border-radius: 30px;
+  border: 1px solid white;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+}
+.four {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transition: all 0.3s;
+}
+.four .content {
+  position: absolute;
+  color: #FFF;
+  top: 255px;
+  left: 265px;
+  display: none;
+}
+.four .content h2 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.four .content .line {
+  width: 34px;
+  height: 4px;
+  background-color: #888484;
+  margin-bottom: 20px;
+}
+.four .content h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.four .content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.four .content button {
+  padding: 20px 50px;
+  border-radius: 30px;
+  border: 1px solid white;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+}
+.five {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transition: all 0.3s;
+}
+.five .content {
+  position: absolute;
+  color: #FFF;
+  top: 255px;
+  left: 265px;
+  display: none;
+}
+.five .content h2 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.five .content .line {
+  width: 34px;
+  height: 4px;
+  background-color: #888484;
+  margin-bottom: 20px;
+}
+.five .content h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.five .content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.five .content button {
+  padding: 20px 50px;
+  border-radius: 30px;
+  border: 1px solid white;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+}
+section.active .content {
+  animation: yy 3s  ;
+}
+@keyframes yy {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=./360.css.map */

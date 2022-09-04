@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body style="height:2000px">
+    <script type="text/javascript">
+        $(document).bind('mousewheel DOMMouseScroll', function (event) { //on也可以 bind监听
+            //Chorme
+            var wheel = event.originalEvent.wheelDelta;
+            var detal = event.originalEvent.detail;
+            if (event.originalEvent.wheelDelta) { //判断浏览器IE,谷歌滚轮事件               
+                if (wheel > 0) { //当滑轮向上滚动时  
+                    alert('上滚')
+                }
+                if (wheel < 0) { //当滑轮向下滚动时  
+                    alert('下滚')
+                }
+            } else if (event.originalEvent.detail) {  //Firefox滚轮事件  
+                if (detal > 0) { //当滑轮向下滚动时  
+                    alert('下滚')
+                }
+                if (detal < 0) { //当滑轮向上滚动时  
+                    alert('上滚')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

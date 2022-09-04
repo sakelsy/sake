@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+    <link rel="stylesheet" href="./360.css">
+</head>
+
+<body>
+    <div class="screen">
+        <div class="dots">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+        <div class="top">
+            <div class="left">
+                <img src="./img/title.png" alt="">
+            </div>
+            <div class="right">
+                <span><a href="">论坛</a></span>
+                <span><a href="">扩展</a></span>
+                <span><a href="">mac版</a></span>
+            </div>
+        </div>
+        <section class="first">
+            <img src="./img/青月.png" class="a" alt="">
+            <img src="./img/红月.png" class="b" alt="">
+            <img src="./img/卫星.png" class="c" alt="">
+            <div class="content1">
+                <h3>畅快浏览 极致体验</h3>
+                <p>全新Chrome内核浏览器，性能更强，速度更快</p>
+                <div class="control">
+                    <button class="aa">32位版本</button>
+                    <button class="bb">64位版本</button>
+                </div>
+            </div>
+        </section>
+        <section class="second">
+            <video src="./img/星球渐变.mp4"></video>
+            <div class="content">
+                <h2>极速</h2>
+                <div class="line"></div>
+                <h3>全新Chromium内核</h3>
+                <p>性能强劲，快如闪电。</p>
+                <button>立即体验</button>
+            </div>
+        </section>
+        <section class="three">
+            <video src="./img/窗口.mp4"></video>
+            <div class="content">
+                <h2>极酷</h2>
+                <div class="line"></div>
+                <h3>暗夜炫黑模式</h3>
+                <p>定义酷，定义你。</p>
+                <button>立即体验</button>
+            </div>
+        </section>
+        <section class="four">
+            <video src="./img/钥匙孔.mp4"></video>
+            <div class="content">
+                <h2>极安全</h2>
+                <div class="line"></div>
+                <h3>DNS加密防劫持</h3>
+                <p>安全升级，肆意无忌。</p>
+                <button>立即体验</button>
+            </div>
+        </section>
+        <section class="five">
+            <video src="./img/窗口.mp4"></video>
+            <div class="content">
+                <h2>极视界</h2>
+                <div class="line"></div>
+                <h3>4K高清视频播放</h3>
+                <p>还原真实之美 ，尽显万物本色。</p>
+                <button>立即体验</button>
+            </div>
+        </section>
+    </div>
+    <script>
+        var a;
+        $(".dots").children().eq(0).css("background-color", "#c3c3c3")
+        console.log($(".dots").children().eq(0));
+
+        var time = 0
+        $(".dots li").mousemove(function () {
+            // d.classList.add("active")
+            $(this).css("background-color", "#c3c3c3").siblings().css("background-color", "#grey")
+
+            console.log($(this).index());
+            time = $(this).index()
+            $(".first").css({
+                marginTop: -$(this).index() * 100 + 'vh'
+            })
+            $('.content').fadeOut()
+            $('.content').eq($(this).index() - 1).fadeIn(1000)
+
+            
+        })
+
+        $(document).bind('mousewheel DOMMouseScroll', _.throttle(function (event) { //on也可以 bind监听
+            //Chorme
+            var wheel = event.originalEvent.wheelDelta;
+            var detal = event.originalEvent.detail;
+
+
+            if (event.originalEvent.wheelDelta) { //判断浏览器IE,谷歌滚轮事件               
+                if (wheel > 0) { //当滑轮向上滚动时  
+                    time -= 1;
+                    if (time < 0) {
+                        time = 0
+                    }
+                    if (time > 4) {
+                        time = 4
+                    }
+
+                    $('.content').fadeOut()
+                    $('.content').eq(time - 1).fadeIn(1000)
+                    $(".first").css({
+                        marginTop: -time * 100 + 'vh'
+                    })
+                    $(".dots").children().eq(time).css("background-color", "#c3c3c3").siblings().css("background-color", "grey")
+
+                }
+                if (wheel < 0) { //当滑轮向下滚动时   
+                    time += 1;
+                    if (time < 0) {
+                        time = 0
+                    }
+                    if (time > 4) {
+                        time = 4
+                    }
+                    console.log(time);
+
+                    $('.content').fadeOut()
+                    $('.content').eq(time - 1).fadeIn(1000)
+                    $(".first").css({
+                        marginTop: - time * 100 + 'vh'
+                    })
+                    $(".dots").children().eq(time).css("background-color", "#c3c3c3").siblings().css("background-color", "grey")
+                }
+            }
+        }, 1500));
+
+
+    </script>
+</body>
+
+</html>
