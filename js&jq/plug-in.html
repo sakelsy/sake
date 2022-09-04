@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <!-- <link rel="stylesheet" href="./pic.css"> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> -->
+    <!-- <script src="./plug-in.js"></script> -->
+</head>
+
+<body>
+    <div class="stage"></div>
+
+    <style>
+        .stage li {
+            transition: all .5s;
+        }
+    </style>
+    <script>
+        $(".stage").css({
+            width: 1000,
+            height: 500,
+            margin: "auto",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "50px"
+        })
+
+        var pics = [];
+        function pic(one, two, three, four) {
+            pics.push(one);
+            pics.push(two);
+            pics.push(three);
+            pics.push(four);
+        }
+        function several(n, arr) {
+            for (var i = 0; i < n; i++) {
+                $(".stage").append("<li></li>")
+                $(".stage").children().eq(i).css({
+                    width: 100,
+                    height: 500,
+                    backgroundImage: 'url(./img/' + pics[i] + '.jpeg)',
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                })
+            }
+            $(".stage").children().eq(0).css({
+                width: 700,
+            })
+            $("body").css({
+                backgroundImage: "url(./img/" + pics[0] + ".jpeg)"
+            })
+            $(".stage li").click(function () {
+                $(this).css({
+                    width: 700,
+                }).siblings().css("width", "100")
+                console.log($(this).css("backgroundImage"));
+                $("body").css({
+                    backgroundImage: $(this).css("backgroundImage")
+                })
+            })
+        }
+
+
+
+
+        //  pic 内写入图片名称，图片格式时jpg格式
+        pic(1, 2, 3, 4)
+        // 这个不用修改为固定四张图片
+        several(4, pics)
+
+
+    </script>
+</body>
+
+</html>

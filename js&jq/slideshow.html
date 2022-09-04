@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="content"></ul>
+        <div class="control">
+            <button class="prev">
+                < </button>
+                    <button class="next">></button>
+        </div>
+    </div>
+    <style>
+        .stage {
+            position: relative;
+            width: 1200px;
+            height: 360px;
+            margin: 100px auto;
+        }
+
+        ul.content {
+            width: 1200px;
+            height: 360px;
+            position: absolute;
+        }
+
+        li {
+            position: absolute;
+            background-size: 100% 100%;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .control {
+            position: absolute;
+            top: 157px;
+            left: 293px;
+            z-index: 30;
+        }
+
+        .next {
+            margin-left: 591px;
+            margin-top: -60px;
+        }
+
+        button {
+            padding: 20px;
+            border: none;
+            background-color: rgba(255, 166, 0, 0.425);
+            font-size: 20px;
+            color: aliceblue;
+        }
+    </style>
+    <script>
+        var pic = [
+            "./img/1.jpg",
+            "./img/2.jpg",
+            "./img/3.jpg",
+            "./img/4.jpg",
+            "./img/5.jpg",
+            "./img/6.jpg",
+            "./img/7.jpg"
+        ]
+        var size = [
+            { "top": 60, "left": 0, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 },
+            { "top": 60, "left": 0, "width": 400, "height": 240, "zIndex": 2, "opacity": .4 },
+            { "top": 30, "left": 150, "width": 500, "height": 300, "zIndex": 3, "opacity": .7 },
+            { "top": 0, "left": 300, "width": 600, "height": 360, "zIndex": 4, "opacity": 1 },
+            { "top": 30, "left": 550, "width": 500, "height": 300, "zIndex": 3, "opacity": .7 },
+            { "top": 60, "left": 800, "width": 400, "height": 240, "zIndex": 2, "opacity": .4 },
+            { "top": 60, "left": 800, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 }
+        ]
+        var flag = true;
+        $(".prev").click(function () {
+            fmove(1);
+        })
+        $(".next").click(function () {
+            move(-1);
+        })
+
+        for (var i = 0; i < pic.length; i++) {
+            $(".stage ul").append('<li style="background-image: url(./' + pic[i] + '); top:' + size[i].top + 'px; left:' + size[i].left + 'px; width:' + size[i].width + 'px; z-index:' + size[i].zIndex + ';  height:' + size[i].height + 'px; opacity:' + size[i].opacity + ';"></li>')
+        }
+        function move(n) {
+            if (n) {
+                size.unshift(size.pop());
+            } else {
+                size.push(size.shift());
+            }
+            for (var i = 0; i < $(".stage ul ").children().length; i++) {
+                $(".stage ul ").children().eq(i).css({
+                    top: size[i].top + 'px',
+                    left: size[i].left + 'px',
+                    width: size[i].width + 'px',
+                    zIndex: size[i].zIndex,
+                    height: size[i].height + 'px',
+                    opacity: size[i].opacity,
+                })
+            }
+        }
+
+        function fmove(n) {
+            if (n) {
+                size.push(size.shift());
+            } else {
+                size.unshift(size.pop());
+            }
+
+            for (var i = 0; i < $(".stage ul ").children().length; i++) {
+                $(".stage ul ").children().eq(i).css({
+                    top: size[i].top + 'px',
+                    left: size[i].left + 'px',
+                    width: size[i].width + 'px',
+                    zIndex: size[i].zIndex,
+                    height: size[i].height + 'px',
+                    opacity: size[i].opacity,
+                })
+            }
+
+        }
+
+        var id = setInterval(function () {
+            move(-1);
+        }, 2000);
+
+        $(".stage").mouseover(function () {
+            // for (var i = 0; i < btnArr.length; i++) {
+            //     btnArr[i].style.display = 'block';
+            // }
+            $("button").css({
+                display: "block"
+            })
+            clearInterval(id);
+        })
+        $(".stage").mouseout(function () {
+            // for (var i = 0; i < btnArr.length; i++) {
+            //     btnArr[i].style.display = 'none';
+            // }
+            $("button").css({
+                display: "none"
+            })
+            // wrap.timer = setInterval(function () {
+            //     move(true);
+            // }, speed);
+        })
+
+
+    </script>
+</body>
+
+</html>

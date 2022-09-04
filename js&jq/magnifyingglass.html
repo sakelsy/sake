@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="stage">
+            <img src="./img/1_tb.jpg" alt="">
+            <div class="mask1"></div>
+            <div class="zoom"></div>
+        </div>
+        <div class="control">
+            <ul>
+                <li>
+                    <img src="./img/1_tb.jpg" alt="">
+                    <div class="mask"></div>
+                </li>
+                <li>
+                    <img src="./img/2_tb.jpg" alt="">
+                    <div class="mask"></div>
+                </li>
+                <li>
+                    <img src="./img/3_tb.jpg" alt="">
+                    <div class="mask"></div>
+                </li>
+                <li>
+                    <img src="./img/4_tb.jpg" alt="">
+                    <div class="mask"></div>
+                </li>
+                <li>
+                    <img src="./img/5_tb.jpg" alt="">
+                    <div class="mask"></div>
+                </li>
+                <li>
+                    <img src="./img/6_tb.jpg" alt="">
+                    <div class="mask"></div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    
+    <style>
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stage {
+            width: 300px;
+            height: 300px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .control ul {
+            display: flex;
+        }
+
+        .control ul li {
+            width: 50px;
+            height: 50px;
+            position: relative;
+
+        }
+
+        .control ul li .mask {
+            width: 50px;
+            height: 50px;
+            background-color: #f1f3f485;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* z-index: 1; */
+        }
+
+        .control ul li img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .mask:hover {
+            z-index: -10;
+        }
+
+        .mask1 {
+            width: 100px;
+            height: 100px;
+            /* background-color: aqua; */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .zoom {
+            position: absolute;
+            left: 400px;
+            top:10px;
+            /* opacity: 0; */
+        }
+    </style>
+
+    <script>
+        var shone = ["1_tb", "2_tb", "3_tb", "4_tb", "5_tb", "6_tb"]
+        function show(n) {
+            for (var i = 0; i < 7; i++) {
+                if (i == n) {
+                    $(".control ul").children().eq(i).children().eq(1).css({
+                        backgroundColor: "rgba(240, 248, 255, 0)"
+                    })
+                    // $(".satge").append('<img src="./img/' + shone[i] + '.jpg" alt="">')
+                    $(".stage img").attr("src", './img/' + shone[i] + '.jpg')
+                } else {
+                    $(".control ul").children().eq(i).children().eq(1).css({
+                        backgroundColor: "#f1f3f485"
+                    })
+                }
+
+            }
+        }
+        show(0)
+
+        $("ul li").click(function () {
+            show($(this).index())
+            $(".zoom").css({
+                backgroundImage: " url(./img/" + shone[$(this).index()] + ".jpg)",
+            })
+        })
+        var level = 3;
+        $(".stage img").mousemove(function () {
+            // $(".stage").append('<div class="zoom"></div>')
+            var x = event.offsetX - ($(".stage").width() / level) / 2
+            var y = event.offsetY - ($(".stage").height() / level) / 2
+            if (x > $(".stage").width() - $(".stage").width() / level) {
+                x = $(".stage").width() - $(".stage").width() / level;
+            }
+            if (x < 0) {
+                x = 0;
+            }
+            if (y > $(".stage").height() - $(".stage").height() / level) {
+                y = $(".stage").height() - $(".stage").height() / level;
+            }
+            if (y < 0) {
+                y = 0;
+            }
+            $(".mask1").css({
+                left: x,
+                top: y,
+            })
+            $(".zoom").css({
+                backgroundPosition: -($(".zoom").width() / $(".mask1").height()) * x + 'px ' + -($(".zoom").height() / $(".mask1").height()) * y + 'px '
+            })
+
+        })
+        $(".zoom").css({
+            width: 300,
+            height: 300,
+            backgroundImage: " url(./img/1_tb.jpg)",
+            backgroundSize: level * 100 + "%",
+        })
+
+    </script>
+</body>
+
+</html>

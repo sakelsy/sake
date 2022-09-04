@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-image:linear-gradient(blue,white);
+            height:100vh
+        }
+        .stage {
+            width: 732px;
+            height: 110px;
+            margin: 80px auto;
+            /* display: flex; */
+            background-image: url("./img/bg_header.png");
+        }
+
+        li {
+            margin-top: 20px;
+            margin-left: 3px;
+            float: left;
+            width: 69px;
+            height: 69px;
+            display: block;
+            margin-right: 10px;
+            transition: 0.4s ease-in-out;
+            /* transform: all .3s; */
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        li a {
+            width: 69px;
+            height: 69px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        li a img {
+            border-radius: 5px;
+            max-width: 100%;
+        }
+
+        li a .big {
+            position: absolute;
+            width: 224px;
+            top: 0;
+            left: 0;
+
+            opacity: 0;
+        }
+
+
+        .active {
+            width: 224px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+     
+        <li><a href="">
+                <img class="small" src="./img/j.webp" alt="">
+                <img class="big" src="./img/j-freehover.png" alt="">
+            </a></li>
+        <li><a href="">
+                <img class="small" src="./img/lb.webp" alt="">
+                <img class="big" src="./img/lb-freehover.png" alt="">
+            </a></li>
+        <li><a href="">
+                <img class="small" src="./img/lbds.webp" alt="">
+                <img class="big" src="./img/lbds-freehover.png" alt="">
+            </a></li>
+        <li><a href="">
+                <img class="small" src="./img/lx.webp" alt="">
+                <img class="big" src="./img/lx-freehover.png" alt="">
+            </a></li>
+        <li><a href="">
+                <img class="small" src="./img/lyf.webp" alt="">
+                <img class="big" src="./img/lyf-freehover.png" alt="">
+            </a></li>
+        <li><a href="">
+                <img class="small" src="./img/xh.webp" alt="">
+                <img class="big" src="./img/xh-freehover.png" alt="">
+            </a></li>
+        <li><a href="">
+                <img class="small" src="./img/yj.webp" alt="">
+                <img class="big" src="./img/yj-freehover.png" alt="">
+            </a></li>
+        
+    </div>
+    
+
+    <script>
+        var time = 0
+        $("li .small ")[0].style.opacity = "0";
+        $("li .big ")[0].style.opacity = "1";
+        $("li")[0].classList.add("active")
+        $("li a")[0].style.width = "224px";
+        $("li").mouseover(function () {
+            $("li .small ")[0].style.opacity = "1";
+            $("li .big ")[0].style.opacity = "0";
+            $("li")[0].classList.remove("active")
+            $("li a")[0].style.width = "69px";
+            console.log("over");
+            $(this)[0].classList.add("active")
+            $("li .small")[$(this).index()].style.opacity = "0";
+            $("li .big")[$(this).index()].style.opacity = "1";
+            $("li a")[$(this).index()].style.width = "224px";
+     
+            console.log($(this).siblings());
+            $(this).siblings().removeClass("active").find(".small").css("opacity" , "1")
+            $(this).siblings().find(".big").css("opacity" , "0")
+            $(this).siblings().find(".small").css("height","69")
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>
