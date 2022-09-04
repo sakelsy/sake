@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .stage {
+            width: 360px;
+            height: 740px;
+            background-color: lightblue;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .over {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0.199);
+            display: none;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            line-height: 300px;
+
+
+        }
+
+        .over p {
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            margin-top: -150px;
+        }
+
+        .over button {
+            padding: 30px 50px;
+            box-sizing: border-box;
+            font-size: 30px;
+            background-color: green;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .main {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: grey;
+        }
+
+        .main i {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90px;
+            height: 148px;
+            background-color: black;
+            /* vertical-align: bottom; */
+            font-size: 0px;
+        }
+
+        .main i.played {
+            background-color: grey;
+        }
+
+        .stage .score {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            top: 0;
+            left: 150px;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        .stage .start {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            z-index: 33;
+        }
+
+        .stage .start button {
+            margin-top: 130px;
+            box-sizing: border-box;
+            padding: 30px 50px;
+            margin-left: 100px;
+            font-size: 30px;
+            color: white;
+            background-color: green;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .stage .start p {
+            text-align: center;
+            margin-top: 200px;
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="start">
+            <p>别踩白块</p>
+            <button>开始</button>
+        </div>
+        <div class="main"></div>
+        <div class="over">
+            游戏失败
+            <p></p>
+            <button>重新开始</button>
+        </div>
+        <div class="score"></div>
+    </div>
+    <script>
+        var mainEl = document.querySelector(".stage .main");
+        var overEl = document.querySelector(".stage .over");
+        var scoreEl = document.querySelector(".stage .score");
+        var pEl = document.querySelector(".stage .over p");
+        var buttonEl = document.querySelector(".stage .start button");
+        var startEl = document.querySelector(".stage .start");
+        var overbuttonEl = document.querySelector(".stage .over button")
+
+        var dots = [];
+        var speed = 0.04;
+        var score = 0
+
+        buttonEl.onclick = function row() {
+            startEl.style.display = "none";
+
+            dots.forEach(function (dot) {
+                mainEl.removeChild(dot.node);
+
+            })
+            dots.splice(0, dots.length);
+            score = 0;
+            pEl.innerHTML = " ";
+
+
+
+            mainEl.onclick = function () {
+                clearInterval(id);
+                overEl.style.display = "block";
+
+                pEl.innerText = "分数为" + score;
+                overbuttonEl.onclick = function () {
+                    overEl.style.display = "none"
+                    // pEl.innerText = "分数为" + score;
+                    row();
+                }
+
+            }
+
+            function Dot(y) {
+                this.x = Math.floor(Math.random() * 4);
+                this.y = y;
+
+
+                this.node = document.createElement("i");
+                this.updateView();
+
+                mainEl.appendChild(this.node);
+
+                var _this = this;
+
+                this.node.onclick = function () {
+                    var firstUnPlayed = dots.filter(function (dot) {
+                        return !dot.played;
+                    })[0];
+                    if (firstUnPlayed.node === this) {
+                        if (!_this.node.classList.contains("played")) {
+                            score++;
+                            console.log(score);
+                            scoreEl.innerText = score;
+                        }
+                        _this.node.classList.add("played");
+                        _this.played = true;
+                        event.stopPropagation();
+                        if (score % 10 === 0) {
+                            speed += 0.001;
+                        }
+                    }
+                }
+            }
+
+            Dot.prototype.updateView = function () {
+                this.node.style.left = this.x * 90 + "px";
+                this.node.style.top = Math.floor(this.y * 148) + "px";
+            };
+
+            Dot.prototype.move = function () {
+                this.y += speed;
+            };
+
+
+            function init() {
+                for (var i = 3; i > 0; i--) {
+                    var d = new Dot(i - 2);
+                    dots.push(d);
+                }
+            }
+            init()
+
+            var id = setInterval(function () {
+                dots.forEach(function (dot) {
+                    dot.move();
+                    dot.updateView();
+                })
+                if (dots[dots.length - 1].y >= -speed) {
+                    var d = new Dot(-1);
+                    dots.push(d);
+                }
+                var firstUnPlayed = dots.filter(function (dot) {
+                    return !dot.played;
+                })[0];
+
+                if (firstUnPlayed && (firstUnPlayed.y + 1) * 148 >= 740) {
+                    clearInterval(id);
+                    overEl.style.display = "block";
+                    overbuttonEl.onclick = function () {
+                        overEl.style.display = "none"
+                        row();
+                    }
+                }
+                var firstPlayed = dots.filter(function (dot) {
+                    return dot.played;
+                })[0];
+                if (firstPlayed && firstPlayed.y * 148 > 740) {
+                    mainEl.removeChild(firstPlayed.node);
+                    dots.splice(dots.indexOf(firstPlayed), 1)
+                }
+            }, 30)
+
+        }
+
+    </script>
+</body>
+
+</html>
