@@ -1,0 +1,606 @@
+.wrapper {
+  width: 1410px;
+  margin: 0 auto;
+}
+.top {
+  background-image: url(img/banner2.jpg);
+  height: 650px;
+  position: relative;
+}
+.top .while {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.clear::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.title .logo {
+  float: left;
+  padding: 20px 0;
+}
+.title .logo img {
+  position: relative;
+}
+.title .menu {
+  float: right;
+  display: flex;
+  padding: 35px 0;
+}
+.title .menu li {
+  margin-left: 40px;
+}
+.title .menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 15px;
+  text-transform: uppercase;
+}
+.title .menu li:first-child a {
+  background-color: #000;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+.title .menu li:hover a {
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: #000;
+}
+.yoga {
+  padding: 40px 0;
+}
+.yoga .wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.yoga .wrapper .right p {
+  font-weight: bold;
+  font-size: 35px;
+  color: #fff;
+}
+.yoga .wrapper .right h3 {
+  font-size: 130px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #fff;
+  line-height: 2em;
+}
+.yoga .wrapper .right button {
+  padding: 15px 60px;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+}
+.classes {
+  padding: 50px 0;
+}
+.classes .title {
+  text-align: center;
+}
+.classes .title h3 {
+  font-size: 45px;
+  font-weight: bold;
+}
+.classes .hatha {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.classes .hatha .card {
+  text-align: center;
+}
+.classes .hatha .card h3 {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.classes .hatha .card p {
+  font-size: 18px;
+  color: #777;
+}
+.classes .hatha2 {
+  display: flex;
+  justify-content: space-around;
+}
+.classes .hatha2 .card {
+  text-align: center;
+}
+.classes .hatha2 .card h3 {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.classes .hatha2 .card p {
+  font-size: 18px;
+  color: #777;
+}
+.classes .hatha3 {
+  display: flex;
+  justify-content: space-around;
+}
+.classes .hatha3 .card {
+  text-align: center;
+}
+.classes .hatha3 .card h3 {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.classes .hatha3 .card p {
+  font-size: 18px;
+  color: #777;
+}
+.classes button {
+  margin-left: 613px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 15px 45px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 15px;
+  font-size: 18px;
+}
+.middle {
+  color: #fff;
+}
+.middle .wrapper {
+  background-color: #001935;
+  height: 600px;
+}
+.middle .wrapper .right {
+  width: 60%;
+  float: left;
+  padding: 120px;
+  box-sizing: border-box;
+}
+.middle .wrapper .right h3 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.middle .wrapper .right p {
+  line-height: 30px;
+  margin-bottom: 50px;
+}
+.middle .wrapper .right button {
+  margin-top: 50px;
+  padding: 20px 35px;
+  box-sizing: border-box;
+  background-color: #f4a111;
+  font-size: 23px;
+  color: white;
+  text-transform: uppercase;
+}
+.middle .wrapper .left {
+  width: 40%;
+  float: right;
+  height: 600px;
+  overflow: hidden;
+}
+.about {
+  margin-top: 20px;
+}
+.about .title {
+  width: 700px;
+  margin: 0 auto;
+}
+.about .title h2 {
+  text-align: center;
+  font-size: 50px;
+  color: #121212;
+  line-height: 45px;
+  font-weight: bold;
+  padding: 0;
+}
+.about .title p {
+  text-align: center;
+  font-size: 17px;
+  line-height: 25px;
+  color: #0a0a0a;
+  padding-top: 30px;
+  display: block;
+}
+.about img {
+  margin-top: 30px;
+}
+.about button {
+  max-width: 292px;
+  height: 60px;
+  padding: 15px 0px;
+  border: none;
+  margin-top: 45px !important;
+  border-radius: 30px;
+  margin: 0 auto;
+  display: block;
+  background-color: #001935;
+  font-size: 17px;
+  color: #fff;
+  width: 100%;
+  max-width: 177px;
+  text-align: center;
+  transition: ease-in all 0.5s;
+  font-weight: 500;
+}
+.banance {
+  margin-top: 30px;
+}
+.banance .wrapper {
+  width: 1400px;
+  margin: 0 auto;
+  display: flex;
+}
+.banance .wrapper .content {
+  background-color: #001935;
+  padding: 150px;
+  box-sizing: border-box;
+}
+.banance .wrapper .content h2 {
+  color: #fff;
+  padding-bottom: 30px;
+  font-size: 50px;
+  line-height: 45px;
+  font-weight: bold;
+}
+.banance .wrapper .content p {
+  color: #fff;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border-bottom: #fff solid 1px;
+  padding-bottom: 35px;
+}
+.banance .wrapper .content button {
+  background: #f4a111;
+  text-transform: uppercase;
+  margin-top: 50px;
+  font-size: 17px;
+  color: #fff;
+  padding: 9px 0px;
+  width: 100%;
+  max-width: 177px;
+  text-align: center;
+  font-weight: 500;
+}
+.pricing {
+  margin-top: 30px;
+}
+.pricing .wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+.pricing .wrapper .title {
+  margin-bottom: 30px;
+}
+.pricing .wrapper .title h3 {
+  font-size: 50px;
+  color: #121212;
+  line-height: 45px;
+  font-weight: bold;
+  padding: 0;
+}
+.pricing .wrapper .title p {
+  font-size: 17px;
+  line-height: 25px;
+  color: #0a0a0a;
+  padding-top: 30px;
+  display: block;
+}
+.pricing .wrapper .list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.pricing .wrapper .list .card {
+  padding: 30px;
+  box-sizing: border-box;
+}
+.pricing .wrapper .list .card .h4 {
+  color: #151515;
+  font-size: 30px;
+  line-height: 20px;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+.pricing .wrapper .list .card .h3 {
+  margin-bottom: 40px;
+  font-size: 83px;
+  padding-bottom: 35px;
+  color: #151515;
+  line-height: 74px;
+  font-weight: bold;
+}
+.pricing .wrapper .list .card .h3 span {
+  color: #f4a111;
+}
+.pricing .wrapper .list .card p {
+  font-weight: bold;
+  color: #151515;
+  padding-bottom: 40px;
+  font-size: 17px;
+  line-height: 28px;
+}
+.pricing .wrapper .list .card a {
+  background: #252525;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 17px;
+  background-color: #001935;
+  color: #fff;
+  padding: 9px 0px;
+  width: 100%;
+  max-width: 177px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+.pricing .wrapper .list .card1,
+.pricing .wrapper .list .card2 {
+  border-left: #cfb5fa solid 5px;
+}
+.says {
+  margin-top: 30px;
+}
+.says .wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+.says .wrapper .title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.says .wrapper .title h2 {
+  font-size: 50px;
+  color: #121212;
+  line-height: 45px;
+  font-weight: bold;
+  padding: 0;
+}
+.says .wrapper .title p {
+  font-size: 17px;
+  line-height: 25px;
+  color: #0a0a0a;
+  padding-top: 30px;
+  display: block;
+}
+.says .wrapper .card {
+  width: 750px;
+  height: 480px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+}
+.says .wrapper .card .top {
+  width: 750px;
+  height: 180px;
+  background-color: #6816ef;
+}
+.says .wrapper .card .one {
+  position: absolute;
+  bottom: -15px;
+  left: 23px;
+}
+.says .wrapper .card .two {
+  position: absolute;
+  bottom: -72px;
+  left: 64px;
+}
+.says .wrapper .card .thr {
+  position: absolute;
+  bottom: -15px;
+  left: 187px;
+}
+.says .wrapper .card .content {
+  padding: 80px;
+  box-sizing: border-box;
+}
+.says .wrapper .card .content h3 {
+  color: #151515;
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+}
+.says .wrapper .card .content p {
+  color: #151515;
+  font-size: 17px;
+  line-height: 28px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+.contast {
+  background-color: #001935;
+  width: 100%;
+}
+.contast .wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+.contast .wrapper .topp h3 {
+  font-size: 50px;
+  color: white;
+  line-height: 45px;
+  font-weight: bold;
+  margin: 30px 0;
+  padding: 30px;
+}
+.contast .wrapper .topp form {
+  width: 450px;
+  padding: 40px 80px;
+  background: #fff;
+  box-sizing: border-box;
+}
+.contast .wrapper .topp form div {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.contast .wrapper .topp form div input {
+  border: #fff solid 1px;
+  padding: 0px 20px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  color: #dadada;
+  font-size: 17px;
+  font-weight: normal;
+  box-shadow: 0px 0px 18px rgba(22, 22, 23, 0.11);
+  border: none;
+}
+.contast .wrapper .topp form div .texterea {
+  border: #fff solid 1px;
+  margin-bottom: 25px;
+  width: 100%;
+  background: #fff;
+  color: #dadada;
+  font-size: 17px;
+  font-weight: normal;
+  padding: 25px 20px 0 20px;
+  box-shadow: 0px 0px 18px rgba(22, 22, 23, 0.11);
+}
+.contast .wrapper .topp form div button {
+  font-size: 20px;
+  transition: ease-in all 0.5s;
+  background-color: #f4a111;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 8px 0px;
+  width: 144px;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  border: none;
+}
+.contast .wrapper .mid {
+  margin-top: 55px;
+}
+.contast .wrapper .mid .h4 {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+}
+.contast .wrapper .mid .h4::before {
+  position: relative;
+  content: "";
+  background-color: #fff;
+  width: 213px;
+  height: 4px;
+  top: 44px;
+  border-radius: 7px;
+  display: flex;
+  margin: 0 auto;
+}
+.contast .wrapper .mid .hh {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 55px;
+}
+.contast .wrapper .mid .hh input {
+  border: inherit;
+  padding: 0px 19px;
+  width: 64%;
+  height: 70px;
+  background: #fff;
+  color: #d5d2d2;
+  font-size: 20px;
+  font-weight: 300;
+  float: left;
+  margin-bottom: 20px;
+}
+.contast .wrapper .mid .hh button {
+  font-size: 17px;
+  transition: ease-in all 0.5s;
+  background-color: #001935;
+  color: #fff;
+  padding: 5px 0px;
+  max-width: 270px;
+  width: 100%;
+  font-weight: normal;
+  text-transform: uppercase;
+  height: 70px;
+  border: #fff solid 15px;
+}
+.contast .wrapper .bot {
+  border-top: #fff solid 3px;
+  padding-bottom: 60px;
+}
+.contast .wrapper .bot .list {
+  display: flex;
+  margin-top: 30px;
+}
+.contast .wrapper .bot .list .card {
+  width: 33.33%;
+}
+.contast .wrapper .bot .list .card h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: left;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.contast .wrapper .bot .list .card li {
+  color: #fff;
+  font-size: 17px;
+  line-height: 32px;
+  display: block;
+}
+.contast .wrapper .bot .list .card li i {
+  margin-right: 10px;
+}
+.contast .wrapper .bot .list .card p {
+  padding-right: 82px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 17px;
+  line-height: 32px;
+  font-weight: normal;
+  text-align: left;
+}
+.contast .wrapper .bot .list .card .icons {
+  width: 200px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.contast .wrapper .bot .list .card .icons i {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.contast .wrapper .bot .list .card .icons i::before {
+  color: #001935;
+  font-size: 18px;
+}
+.contast .wrapper .foot {
+  margin-top: 60px;
+  background-color: #001935;
+  box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.42);
+}
+.contast .wrapper .foot p {
+  color: #fff;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  padding-top: 26px;
+  font-weight: normal;
+  padding-bottom: 20px;
+}
+/*# sourceMappingURL=./3.css.map */
