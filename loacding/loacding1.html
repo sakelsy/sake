@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="card1">
+            <h1>
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </h1>
+        </div>
+        <div class="card2">
+            <section class="container">
+                <div class="rang-frame">
+                    <div class="ring" style="height: 220px; width:220px "></div>
+                    <div class="ring" style="height: 240px; width:240px"></div>
+                    <div class="ring" style="height: 260px; width:260px"></div>
+                </div>
+                <div class="disc-frame">
+                    <div class="disc" style="animation-delay: 0.2s"></div>
+                    <div class="disc" style="animation-delay: 0.8s"></div>
+                    <div class="disc" style="animation-delay: 1.3s"></div>
+                </div>
+                <section class="loading">LOADING...</section>
+            </section>
+        </div>
+    </div>
+    <style>
+        .wrapper{
+            background: linear-gradient(to bottom, #0081c7, #02143c);
+        }
+        .card1 {
+            /* background-color: #0081c7; */
+            width: 100%;
+            height:450px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            color: red;
+            position: relative;
+            display: inline-block;
+            opacity: 1;
+            font-size: 200px;
+            font-weight: bold;
+
+            transition: all .3s;
+        }
+
+        span:nth-of-type(1):after {
+            position: absolute;
+            left: -1px;
+            top: -3px;
+            color: rgba(255, 255, 255, 0.5);
+            content: "L";
+            transition: all .3s;
+        }
+
+        span:nth-of-type(2):after {
+            position: absolute;
+            left: -1px;
+            top: -3px;
+            color: rgba(255, 255, 255, 0.5);
+            content: "O";
+
+        }
+
+        span:nth-of-type(3):after {
+            position: absolute;
+            left: -1px;
+            top: -3px;
+            color: rgba(255, 255, 255, 0.5);
+            content: "A";
+        }
+
+        span:nth-of-type(4):after {
+            position: absolute;
+            left: -1px;
+            top: -3px;
+            color: rgba(255, 255, 255, 0.5);
+            content: "D";
+        }
+
+        span:nth-of-type(5):after {
+            position: absolute;
+            left: -1px;
+            top: -3px;
+            color: rgba(255, 255, 255, 0.5);
+            content: "I";
+        }
+
+        span:nth-of-type(6):after {
+            position: absolute;
+            left: -1px;
+            top: -3px;
+            color: rgba(255, 255, 255, 0.5);
+            content: "N";
+        }
+
+        span:nth-of-type(7):after {
+            position: absolute;
+            left: -1px;
+            top: -3px;
+            color: rgba(255, 255, 255, 0.5);
+            content: "G";
+        }
+
+        span:nth-of-type(2) {
+            animation-delay: 0.25s;
+        }
+
+        span:nth-of-type(3) {
+            animation-delay: 0.45s;
+        }
+
+        span:nth-of-type(4) {
+            animation-delay: 0.65s;
+        }
+
+        span:nth-of-type(5) {
+            animation-delay: 0.85s;
+        }
+
+        span:nth-of-type(6) {
+            animation-delay: 1050ms;
+        }
+
+        span:nth-of-type(7) {
+            animation-delay: 1250ms;
+        }
+
+        @keyframes xx {
+            0% {
+                transform: rotate(0) translateY(0);
+            }
+
+            25% {
+                transform: rotate(90deg) translateY(-50px);
+            }
+
+            50% {
+                transform: rotate(90deg) translateY(-50px);
+            }
+
+            55% {
+                transform: rotate(0) translateY(0);
+            }
+
+            100% {
+                transform: rotate(0) translateY(0);
+            }
+        }
+    </style>
+    <style>
+        .card2 {
+            display: flex;
+            width: 100%;
+            height: 350px;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .rang-frame {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .ring {
+            border: 2px solid rgba(255, 35, 49, 0.1);
+            border-left: 2px solid red;
+            border-right: 2px solid red;
+            border-radius: 50%;
+            display: flex;
+            z-index: 1;
+            position: absolute;
+
+        }
+
+        .ring:nth-child(1) {
+            animation: xxx 1s linear infinite;
+        }
+
+        .ring:nth-child(2) {
+            animation: xxx 1.25s linear infinite;
+        }
+
+        .ring:nth-child(3) {
+            animation: xxx 1.5s linear infinite;
+        }
+
+        .disc-frame {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .disc {
+            position: absolute;
+            height: 154px;
+            width: 154px;
+            border: 2px solid red;
+            border-radius: 50%;
+            animation: yyy 3s linear infinite;
+        }
+
+        .loading {
+            font-size: 1.5rem;
+            color: red;
+            animation: zzz 1s linear infinite;
+        }
+
+
+
+        @keyframes xxx {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes yyy {
+            from {
+                transform: rotateY(0) rotateX(0);
+            }
+
+            to {
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+        }
+
+        @keyframes zzz {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+        var i = 0
+        setInterval(function () {
+            i++;
+            // console.log(i);
+            if (i >= 8) {
+                i = 0;
+            }
+
+            $("span").eq(i - 1).css({
+                animationName: "xx",
+                animationDuration: "3s",
+
+                animationIterationCount: "infinite",
+
+            })
+
+        })
+    </script>
+</body>
+
+</html>
