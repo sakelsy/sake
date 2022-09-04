@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> -->
     <link rel="stylesheet" href="./minireset.css">
     <link rel="stylesheet" href="./360.css">
 </head>
@@ -103,52 +103,61 @@
             $('.content').fadeOut()
             $('.content').eq($(this).index() - 1).fadeIn(1000)
 
-            
-        })
 
-        $(document).bind('mousewheel DOMMouseScroll', _.throttle(function (event) { //on也可以 bind监听
+        })
+        var bool = true;
+        setInterval(function () {
+            bool = true;
+        }, 1500)
+        $(document).bind('mousewheel DOMMouseScroll', function (event) { //on也可以 bind监听
             //Chorme
             var wheel = event.originalEvent.wheelDelta;
             var detal = event.originalEvent.detail;
 
 
             if (event.originalEvent.wheelDelta) { //判断浏览器IE,谷歌滚轮事件               
-                if (wheel > 0) { //当滑轮向上滚动时  
-                    time -= 1;
-                    if (time < 0) {
-                        time = 0
-                    }
-                    if (time > 4) {
-                        time = 4
-                    }
+                if (bool) {
 
-                    $('.content').fadeOut()
-                    $('.content').eq(time - 1).fadeIn(1000)
-                    $(".first").css({
-                        marginTop: -time * 100 + 'vh'
-                    })
-                    $(".dots").children().eq(time).css("background-color", "#c3c3c3").siblings().css("background-color", "grey")
 
-                }
-                if (wheel < 0) { //当滑轮向下滚动时   
-                    time += 1;
-                    if (time < 0) {
-                        time = 0
-                    }
-                    if (time > 4) {
-                        time = 4
-                    }
-                    console.log(time);
+                    if (wheel > 0) { //当滑轮向上滚动时  
+                        time -= 1;
+                        bool = false;
+                        if (time < 0) {
+                            time = 0
+                        }
+                        if (time > 4) {
+                            time = 4
+                        }
 
-                    $('.content').fadeOut()
-                    $('.content').eq(time - 1).fadeIn(1000)
-                    $(".first").css({
-                        marginTop: - time * 100 + 'vh'
-                    })
-                    $(".dots").children().eq(time).css("background-color", "#c3c3c3").siblings().css("background-color", "grey")
+                        $('.content').fadeOut()
+                        $('.content').eq(time - 1).fadeIn(1000)
+                        $(".first").css({
+                            marginTop: -time * 100 + 'vh'
+                        })
+                        $(".dots").children().eq(time).css("background-color", "#c3c3c3").siblings().css("background-color", "grey")
+
+                    }
+                    if (wheel < 0) { //当滑轮向下滚动时   
+                        time += 1;
+                        bool = false;
+                        if (time < 0) {
+                            time = 0
+                        }
+                        if (time > 4) {
+                            time = 4
+                        }
+                        console.log(time);
+
+                        $('.content').fadeOut()
+                        $('.content').eq(time - 1).fadeIn(1000)
+                        $(".first").css({
+                            marginTop: - time * 100 + 'vh'
+                        })
+                        $(".dots").children().eq(time).css("background-color", "#c3c3c3").siblings().css("background-color", "grey")
+                    }
                 }
             }
-        }, 1500));
+        });
 
 
     </script>
