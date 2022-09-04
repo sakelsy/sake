@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <div class="content">
+            <div class="circle">
+                <div class="title">
+                    <h2>背景视觉差</h2>
+                    <h3>mouseon</h3>
+                </div>
+                <div class="item">
+                    <div class="one"><img src="./img/pc1.png" alt=""></div>
+                    <div class="two"><img src="./img/pc3.png" alt=""></div>
+                    <div class="three"><img src="./img/pc2.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="circle">
+                <div class="title">
+                    <h2>背景视觉差</h2>
+                    <h3>mouseon</h3>
+                </div>
+                <div class="item item1">
+                    <div class="one"><img src="./img/pc4.png" alt=""></div>
+                    <div class="two"><img src="./img/pc5.png" alt=""></div>
+                    <div class="three"><img src="./img/pc6.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="circle">
+                <div class="title">
+                    <h2>背景视觉差</h2>
+                    <h3>mouseon</h3>
+                </div>
+                <div class="item">
+                    <div class="one"><img src="./img/pc7.png" alt=""></div>
+                    <div class="two"><img src="./img/pc8.png" alt=""></div>
+                    <div class="three"><img src="./img/pc9.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <style>
+        .page {
+            width: 920px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .content {
+            width: 33.3%;
+            margin: 0 auto;
+            position: relative;
+            max-width: 300px;
+            display: block;
+        }
+
+        .circle {
+            position: absolute;
+            top: 35%;
+            left: 0;
+            right: 0;
+            width: 200px;
+            transition: all .5s;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .item {
+            border-radius: 200px;
+            overflow: hidden;
+            width: 200px;
+            position: relative;
+            z-index: 1;
+            height: 200px;
+        }
+
+        .itme1.one {
+            width: 600px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s;
+        }
+
+        .one {
+            width: 600px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s;
+        }
+
+        .two {
+            width: 600px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: -210px;
+            transition: all .5s;
+        }
+
+        .three {
+            width: 600px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: -440px;
+            transition: all .5s;
+        }
+
+        .content:hover .circle {
+            transform: scale(1.2);
+        }
+
+        .content:hover .one {
+            animation: xx 5s linear forwards;
+        }
+
+        .content:hover .two {
+            animation: yy 5s linear forwards;
+        }
+
+        .content:hover .three {
+            animation: zz 5s linear forwards;
+        }
+
+        @keyframes xx {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: -390px;
+            }
+        }
+
+        @keyframes yy {
+            from {
+                left: -210px;
+            }
+
+            to {
+                left: -400px;
+            }
+        }
+
+        @keyframes zz {
+            from {
+                left: -410px;
+            }
+
+            to {
+                left: -30px;
+            }
+        }
+    </style>
+
+
+</body>
+
+</html>

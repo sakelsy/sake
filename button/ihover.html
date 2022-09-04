@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <div class="effect1">
+        <div class="content"></div>
+        <div class="img">
+        </div>
+        <div class="mask">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
+    <div class="effect2">
+        <div class="content2"></div>
+        <div class="img">
+        </div>
+        <div class="mask1">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
+    <div class="effect3">
+        <div class="content2"></div>
+        <div class="img">
+        </div>
+        <div class="mask2">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
+    <div class="effect4">
+        <!-- <div class="content3"></div> -->
+        <div class="img2">
+        </div>
+        <div class="mask3">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
+    <div class="effect5">
+        <!-- <div class="content4"></div> -->
+        <div class="img3">
+        </div>
+        <div class="mask4">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
+    <div class="effect6">
+        <div class="img">
+        </div>
+        <div class="mask5">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
+    <div class="effect7">
+        <div class="img3">
+        </div>
+        <div class="mask6">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
+
+
+    <style>
+        .effect1 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: red;
+            margin-left: 100px;
+            margin-top: 20px;
+
+        }
+
+        .img {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+        }
+
+        .content {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            border: 10px solid #ecab18;
+            border-right-color: #1ad280;
+            border-bottom-color: #1ad280;
+        }
+
+        .mask {
+            position: absolute;
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            z-index: 2;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        h3,
+        p {
+            text-align: center;
+            color: white;
+
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        .effect1:hover .content {
+            border: 10px solid #1ad280;
+            border-right-color: #ecab18;
+            border-bottom-color: #ecab18;
+            animation: xx 0.8s linear forwards;
+        }
+
+        .effect1:hover .mask {
+            opacity: 1;
+        }
+
+        @keyframes xx {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(100deg);
+            }
+        }
+    </style>
+    <style>
+        .effect2 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: red;
+            /* background-image: url(./fxxx.jpg);
+            background-size: cover; */
+            margin-left: 500px;
+            margin-top: 20px;
+
+        }
+
+        .content2 {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            border: 10px solid #ecab18;
+            /* border-right-color: #1ad280;
+            border-bottom-color: #1ad280; */
+        }
+
+        .img {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+        }
+
+        .mask1 {
+            position: absolute;
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: -250px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            z-index: 2;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        h3,
+        p {
+            text-align: center;
+            color: white;
+
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        .effect2:hover .img {
+            animation: xx 0.8s linear forwards;
+        }
+
+        .effect2:hover .mask1 {
+            animation: yy 0.8s linear forwards;
+            opacity: 1;
+        }
+
+        @keyframes yy {
+            from {
+                transform: translateX(0) rotate(0);
+            }
+
+            to {
+                transform: translateX(250px) rotate(0);
+            }
+        }
+
+        @keyframes xx {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(100deg);
+            }
+        }
+    </style>
+    <style>
+        .effect3 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: red;
+            /* background-image: url(./fxxx.jpg);
+            background-size: cover; */
+            margin-left: 100px;
+            margin-top: 20px;
+
+        }
+
+        .content2 {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            border: 10px solid #ecab18;
+            /* border-right-color: #1ad280;
+            border-bottom-color: #1ad280; */
+        }
+
+        .img {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+        }
+
+        .mask2 {
+            position: absolute;
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: -250px;
+            left: 0px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            z-index: 2;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        h3,
+        p {
+            text-align: center;
+            color: white;
+
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        .effect3:hover .img {
+            animation: xx 0.8s linear forwards;
+        }
+
+        .effect3:hover .mask2 {
+            animation: zz 0.8s linear forwards;
+            opacity: 1;
+        }
+
+        @keyframes zz {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(250px);
+            }
+        }
+
+        @keyframes xx {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-100deg);
+            }
+        }
+    </style>
+    <style>
+        .effect4 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            /* background-color: red; */
+            margin-left: 500px;
+            margin-top: 70px;
+
+            z-index: 9;
+
+        }
+
+        .content3 {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            border: 10px solid #ecab18;
+            /* border-right-color: #1ad280;
+            border-bottom-color: #1ad280; */
+
+        }
+
+        .img2 {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+            z-index: 9;
+        }
+
+        .mask3 {
+            position: absolute;
+            /* position: relative; */
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: -250px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            z-index: 2;
+            opacity: 0;
+            transition: all .5s;
+            /* animation: hugo 2s ease forwards;
+            opacity: 1; */
+        }
+
+        h3,
+        p {
+            text-align: center;
+            color: white;
+
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .effect4:hover .mask3 {
+            animation: hugo 2s ease forwards;
+            opacity: 1;
+        }
+
+        .effect4:hover .img2 {
+            animation: sake 2s ease forwards;
+
+        }
+
+        @keyframes hugo {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(150px);
+            }
+        }
+
+        @keyframes sake {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.4);
+            }
+        }
+    </style>
+    <style>
+        .effect5 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            /* background-color: red; */
+            margin-left: 100px;
+            margin-top: 70px;
+
+            z-index: 9;
+
+        }
+
+
+        .img3 {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+            /* z-index: 9; */
+            /* animation: ss 4s ease forwards; */
+        }
+
+        .mask4 {
+            position: absolute;
+            /* position: relative; */
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: -250px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            z-index: 2;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        .effect5:hover .mask4 {
+            animation: hugo .3s ease forwards;
+            opacity: 1;
+        }
+
+        .effect5:hover .img3 {
+            animation: ss 0.4s ease-in-out forwards;
+
+        }
+
+
+        @keyframes ss {
+            0% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(50px);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateX(90px);
+                opacity: 0;
+            }
+        }
+    </style>
+    <style>
+        .effect6 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            /* background-color: red; */
+            margin-left: 500px;
+            margin-top: 70px;
+
+            z-index: 9;
+
+        }
+
+
+        .mask5 {
+            position: absolute;
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            z-index: 2;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        @keyframes jj {
+            from {
+                opacity: .5;
+                transform: rotateY(180deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: rotateY(0);
+            }
+        }
+
+        .effect6:hover .mask5 {
+            animation: jj .3s linear forwards;
+        }
+    </style>
+
+    <style>
+        .effect7 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            /* background-color: red; */
+            margin-left: 100px;
+            margin-top: 70px;
+
+            z-index: 9;
+
+        }
+        .img3 {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+            /* z-index: 9; */
+            /* animation: ss 4s ease forwards; */
+        }
+
+
+        .mask6 {
+            position: absolute;
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            z-index: 2;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        @keyframes kk {
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            
+            50% {
+                transform: scale(1.15);
+                opacity: 0.4;
+            }
+            
+            75% {
+                transform: scale(1.2);
+                opacity: 0.1;
+            }
+            
+            100% {
+                transform: scale(1.25);
+                opacity: 0;
+            }
+        }
+
+        .effect7:hover  .img3{
+            animation: kk 2s linear forwards;
+        }
+        .effect7:hover .mask6{
+            opacity: 1;
+        }
+    </style>
+</body>
+
+</html>
