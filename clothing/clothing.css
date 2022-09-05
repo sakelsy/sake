@@ -347,6 +347,9 @@
   background-position: center;
   background-size: cover;
 }
+.count {
+  background-color: #fafafb;
+}
 .count .container-fluid .row .left {
   display: flex;
   padding-left: 0 !important;
@@ -757,12 +760,11 @@
 }
 .lunbo .container-fluid .row .stage {
   position: relative;
-  width: 1520px;
   height: 800px;
 }
 .lunbo .container-fluid .row .stage li {
   height: 800px;
-  width: 1520px;
+  width: 100%;
   background-position: center;
   background-size: cover;
   transition: all 0.3s;
