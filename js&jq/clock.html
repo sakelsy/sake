@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <div class="stage">
+        <div class="yx"></div>
+        <div class="tail">
+        </div>
+        <div class="poninter">
+            <i class="mz">
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+                <i class="mz-f"></i>
+            </i>
+            <i class="fz"></i>
+            <i class="sz"></i>
+        </div>
+    </div>
+    <style>
+        body{
+            background-color: black;
+        }
+        .stage {
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            border-radius: 50%;
+            /* background-color: lightblue; */
+            background: linear-gradient(#e3e4e8, #c7cad1);
+            position: relative;
+            /* border: 5px solid #c7cad1; */
+            box-shadow: 0 0.125em 0.25em rgb(255 255 255 / 30%) inset, 0 -0.125em 0.25em rgb(0 0 0 / 30%) inset, 0 0 0.75em rgb(0 0 0 / 25%);
+        }
+
+        .yx {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: 246px;
+            left: 48.6%;
+            margin-left: -2.5px;
+            background-color: rgb(37 95 244);
+            z-index: 4;
+        }
+
+        .tail {
+            position: relative;
+            display: block;
+        }
+
+        .tail i {
+            display: block;
+            transform-origin: center 250px;
+        }
+
+        .tail i.b {
+            width: 8px;
+            height: 40px;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            margin-left: -4px;
+            background-color: black;
+        }
+
+        .tail i.s {
+            width: 4px;
+            height: 20px;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            margin-left: -2px;
+            background-color: black;
+        }
+
+        .poninter {
+            position: relative;
+        }
+
+        .poninter i.mz .mz-f {
+            position: absolute;
+            background-color: inherit;
+            width: 100%;
+            height: 100%;
+            transform-origin: inherit;
+
+        }
+
+        .poninter i.mz .mz-f:nth-of-type(1){
+            animation: aa 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+        .poninter i.mz .mz-f:nth-of-type(2){
+            animation: bb 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+        .poninter i.mz .mz-f:nth-of-type(3){
+            animation: cc 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+        .poninter i.mz .mz-f:nth-of-type(4){
+            animation: dd 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+        .poninter i.mz .mz-f:nth-of-type(5){
+            animation: ee 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+        .poninter i.mz .mz-f:nth-of-type(6){
+            animation: ff 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+        .poninter i.mz .mz-f:nth-of-type(7){
+            animation: gg 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+        .poninter i.mz .mz-f:nth-of-type(8){
+            animation: zz 1s -0.345s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+        }
+
+        .poninter i.mz {
+            width: 6px;
+            height: 215px;
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            margin-left: -3px;
+            background-color: rgb(37 95 244);
+            transform-origin: center 185px;
+            z-index: 3;
+
+        }
+
+        .poninter i.fz {
+            width: 8px;
+            height: 175px;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            margin-left: -4px;
+            background-color: black;
+            transform-origin: center 155px;
+
+        }
+
+        .poninter i.sz {
+            width: 12px;
+            height: 125px;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            margin-left: -6px;
+            background-color: black;
+            transform-origin: center 105px;
+        }
+
+        @keyframes aa {
+            from {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: rotate(-0.0166666667turn);
+            }
+        }
+
+        @keyframes bb {
+            0%,
+            14.99% {
+                opacity: 0;
+                transform: rotate(0);
+            }
+
+            15% {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-0.0145833333turn);
+            }
+        }
+
+        @keyframes cc {
+            0%,
+            24.99% {
+                opacity: 0;
+                transform: rotate(0);
+            }
+
+            25% {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-0.0125turn);
+            }
+        }
+
+        @keyframes dd {
+            0%,
+            37.99% {
+                opacity: 0;
+                transform: rotate(0);
+            }
+
+            38% {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-0.0104166667turn);
+            }
+        }
+
+
+        
+        @keyframes ee {
+            0%,
+            49.99% {
+                opacity: 0;
+                transform: rotate(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-0.0083333333turn);
+            }
+        }
+
+        @keyframes ff {
+            0%,
+            64.99% {
+                opacity: 0;
+                transform: rotate(0);
+            }
+
+            65% {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-0.00625turn);
+            }
+        }
+
+        @keyframes gg {
+            0%,
+            74.99% {
+                opacity: 0;
+                transform: rotate(0);
+            }
+
+            75% {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-0.0041666667turn);
+            }
+        }
+
+        @keyframes zz {
+            0%,
+            84.99% {
+                opacity: 0;
+                transform: rotate(0);
+            }
+
+            85% {
+                opacity: 1;
+                transform: rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: rotate(-0.0020833333turn);
+            }
+        }
+
+
+    </style>
+    <script>
+        for (var i = 0; i < 12 * 5; i++) {
+            var node = document.createElement("i");
+            if (i % 5 == 0) {
+                node.className = "b";
+            } else {
+                node.className = "s";
+            }
+            node.style.transform = "rotate(" + i * (360 / (12 * 5)) + "deg)" + " " + "translateY(15px)";
+            document.querySelector(".tail").appendChild(node);
+        }
+
+        setInterval(function () {
+            var now = new Date;
+            var ss = now.getSeconds();
+            var mm = now.getMinutes();
+            var hh = now.getHours();
+
+            document.querySelector(".mz").style.transform = "rotate(" + ss * (360 / (12 * 5)) + "deg)";
+            document.querySelector(".fz").style.transform = "rotate(" + mm * (360 / (12 * 5)) + "deg)";
+
+            var a = hh * 30 + 0.1 * ss
+            document.querySelector(".sz").style.transform = "rotate(" + a + "deg)";
+
+
+        }, 1000);
+
+
+
+
+    </script>
+</body>
+
+</html>
