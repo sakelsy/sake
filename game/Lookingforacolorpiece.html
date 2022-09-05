@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="stage">
+
+    </div>
+    <div class="ke">
+        <div class="mask">
+            <h3>游戏结束</h3>
+            <button>重新开始</button>
+        </div>
+    </div>
+
+    <style>
+        .stage {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        .ke {
+            position: absolute;
+            width: 510px;
+            height: 500px;
+            top: 0;
+            left: 510px;
+            background-color: #3f51b5be;
+            display: none;
+        }
+
+        .mask {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mask h3 {
+            font-size: 100px;
+            font-weight: 800;
+        }
+
+        .mask button {
+            margin-top: 30px;
+            padding: 20px 30px;
+            border: none;
+            background-color: green;
+            border-radius: 20px;
+            font-size: 20px;
+        }
+
+        .stage li {
+            border-radius: 50%;
+
+        }
+    </style>
+    <script>
+        var stage = document.querySelector('.stage');
+        var level = 1
+
+        function showFot(level) {
+            stage.innerHTML = '';
+            var color = "#" + Math.random().toString(16).slice(-6);
+            for (let i = 0; i < Math.pow(level + 2, 2); i++) {
+                var node = document.createElement('li');
+                node.style.width = 500 / (level + 2) + 'px';
+                node.style.backgroundColor = color;
+                stage.appendChild(node)
+            }
+
+            var index = Math.floor(Math.random() * stage.querySelectorAll('li').length);
+
+            stage.querySelectorAll('li')[index].style.opacity = 0.7;
+            $("li").click(function () {
+                if ($(this).index() == index) {
+                    level++;
+                    showFot(level);
+                } else {
+                   $(".ke").css("display","block")
+                }
+
+            })
+
+            $(".ke button").click(function () {
+                location.reload();
+            })
+        }
+
+        showFot(level);
+    </script>
+</body>
+
+</html>
