@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+    <style>
+        .main {
+            width: 600px;
+            height: 576px;
+            margin: 0 auto;
+            background-image: url(./img/bg.png);
+        }
+
+        button {
+            width: 180px;
+            height: 100px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 58px;
+            position: relative;
+            left: 50px;
+            top: 210px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+
+        }
+
+        .text {
+            width: 180px;
+            height: 100px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 58px;
+            margin: 30px 380px auto;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .name {
+            position: relative;
+            /* background: #999; */
+            left: 200px;
+            top: 120px;
+            width: 200px;
+            height: 100px;
+            color: #9fc;
+            font-weight: bold;
+            font-size: 58px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <button>开始</button>
+        <div class="name"></div>
+        <div class="text">点名</div>
+    </div>
+
+    <script>
+        var id;
+        var bool = true;
+        names = ['叶伏天', '花谢语', '叶无尘', '叶百川', '顾东流', '刑开', '丫丫', '余生', '夏青鸾', '楼兰雪', '白陆离', '华青青', '诸葛明月', '龙倚天', '萧沐鱼', '皇九哥', '花风流', '齐玄罡', '雪夜', '萧笙', '周知命', '盖穹', '盖苍', '帝乌', '神昊'];
+
+        $('button').click(function () {
+            if (bool == true) {
+                bool = false;
+                console.log(bool);
+                $(this).css({ 'color': '#f00' }).html('停止');
+                id = setInterval(function () {
+                    index = Math.floor(Math.random() * names.length);
+                    val = names[index];
+                    console.log(val);
+                    $('.name').css({ 'color': '#9fc' }).html(val);
+                }, 50)
+            } else {
+                $(this).css({ 'color': '#fff' }).html('开始');
+                $('.name').css({ 'color': '#f00' });
+                clearInterval(id);
+                bool = true;
+            }
+        });
+    </script>
+</body>
+
+</html>

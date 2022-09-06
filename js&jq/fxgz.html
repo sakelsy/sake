@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+    <style>
+        .stage {
+            width: 1400px;
+            margin: 0 auto;
+        }
+
+        li {
+            width: 400px;
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* z-index: 2; */
+        }
+
+        span {
+            font-size: 14px;
+            color: white;
+            z-index: -1;
+        }
+
+        p i {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -2;
+            background: #000000;
+            opacity: 0.8;
+        }
+
+        img {
+            transition: all .3s;
+        }
+
+        img.active {
+
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="content">
+            <li class="card1">
+                <img src="./img/t1.png" alt="">
+                <p>
+                    <span>《A-10》VR
+                        是一款非常精致的FPS游戏，游戏画面精美度与沉浸感都非常的舒适，UI布局非常的有条理，戴上虚拟头盔进入游戏无丝毫眩晕的效果，背景音乐旋律非常的有动感，与精美的画面结合在一起，会让你立马喜欢上这款第一人称射击游戏。</span>
+                    <i></i>
+                </p>
+            </li>
+            <li class="card2">
+                <img src="./img/t2.png" alt="">
+                <p>
+                    <span>欢迎来到《Cloudlands：VR Minigolf！》在云端你将会体验到前所未有的迷你虚拟现实高尔夫运动。你将会被转送到一个在云上的美丽群岛。</span>
+                    <i></i>
+                </p>
+            </li>
+            <li class="card3">
+                <img src="./img/t3.png" alt="">
+                <p>
+                    <span>《热舞节拍》为深圳火花幻境虚拟现实技术有限公司自主研发的一款VR音乐游戏，具有偏观赏性、简单易上手、难精通等特点。</span>
+                    <i></i>
+                </p>
+            </li>
+            <li class="card4">
+                <img src="./img/t4.png" alt="">
+                <p>
+                    <span>《隐秘地牢》是一款潜行玩法的第一人称设计游戏。在科幻的迷宫中，玩家必须前进，一个房间一个房间的进行探索，在时间用尽，一切爆炸之前找到正确的出路。许多的机器人在阴暗的走廊上巡逻；镭射警报器也需要注意；灯光要被摧毁，以便潜行于黑暗；还有许多们必须打开。最后还有一个必须按的按钮。</span>
+                    <i></i>
+                </p>
+            </li>
+            <li class="card5">
+                <img src="./img/t5.png" alt="">
+                <p>
+                    <span>
+                        《自体悖论》是一款与自己对抗的游戏。当时间机器发疯之后会发生什么？为了避免可怕的时间悖论，你唯一的希望就是在时间的螺旋中修好这台机器。
+                    </span>
+                    <i></i>
+                </p>
+            </li>
+            <li class="card6">
+                <img src="./img/t6.png" alt="">
+                <p>
+                    <span>《意能释放》是一款特别为VR量身打造的第一人称科幻射击游戏。以扮演一个机器人，要尽力在落基山脉中的一个秘密军事基地里生存下来，在这场史诗般的挑战中，你将被未来科幻的场景所环绕，你要尽一切可能生存下来，与那些机械军团作战。</span>
+                    <i></i>
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+
+        Event($("ul li.card1"), $("ul li.card1 p"))
+        Evento($("ul li.card1"), $("ul li.card1 p"))
+        Event($("ul li.card2"), $("ul li.card2 p"))
+        Evento($("ul li.card2"), $("ul li.card2 p"))
+        Event($("ul li.card3"), $("ul li.card3 p"))
+        Evento($("ul li.card3"), $("ul li.card3 p"))
+        Event($("ul li.card4"), $("ul li.card4 p"))
+        Evento($("ul li.card4"), $("ul li.card4 p"))
+        Event($("ul li.card5"), $("ul li.card5 p"))
+        Evento($("ul li.card5"), $("ul li.card5 p"))
+        Event($("ul li.card6"), $("ul li.card6 p"))
+        Evento($("ul li.card6"), $("ul li.card6 p"))
+        function Event(pic, p) {
+            pic.mouseenter(function (e) {
+                pic.children().eq(0).addClass("active")
+                var x = (e.clientX || e.pageX) - $(this).offset().left;
+                var y = (e.clientY || e.pageY) - $(this).offset().top;
+                // console.log(x, y);
+                // console.log(x,y);
+                var sh = y < $(this).height() / 2
+                var xia = y > $(this).height() / 2
+                var zu = x < $(this).width() / 2
+                var yo = x > $(this).width() / 2
+                // console.log(sh);
+                // console.log(xia);
+
+                if (sh && (y < 20)) {
+
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 2,
+                            top: -$(this).height(),
+                            left: 0
+                        }).animate({ left: 0, top: 0 }, 300)
+                    }, 100)
+                }
+                if (xia && (y > $(this).height() - 20)) {
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 2,
+                            top: $(this).height(),
+                            left: 0
+                        }).animate({ left: 0, top: 0 }, 300)
+                    }, 100)
+                }
+                if (zu && (x < 20)) {
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 2,
+                            top: 0,
+                            left: -$(this).width()
+                        }).animate({ left: 0, top: 0 }, 300)
+                    }, 100)
+
+                }
+                if (yo && (x > $(this).width() - 20)) {
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 2,
+                            top: 0,
+                            left: $(this).width()
+                        }).animate({ left: 0, top: 0 }, 300)
+                    }, 100)
+                }
+            })
+        }
+
+        function Evento(pic, p) {
+            pic.mouseleave(function (e) {
+                pic.children().eq(0).removeClass("active")
+                var x = (e.clientX || e.pageX) - $(this).offset().left;
+                var y = (e.clientY || e.pageY) - $(this).offset().top;
+                console.log(x, y);
+                // console.log(x,y);
+                var sh = y < $(this).height() / 2
+                var xia = y > $(this).height() / 2
+                var zu = x < $(this).width() / 2
+                var yo = x > $(this).width() / 2
+                // console.log(sh);
+                // console.log(xia);
+
+                if (sh && (y < 20)) {
+
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 0,
+                            top: 0,
+                            left: 0
+                        }).animate({ left: 0, top: -$(this).height(), }, 300)
+                    }, 100)
+
+                }
+                if (xia && (y > $(this).height() - 20)) {
+
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 0,
+                            top: 0,
+                            left: 0
+                        }).animate({ left: 0, top: $(this).height() }, 300)
+                    }, 100)
+
+                }
+                if (zu && (x < 20)) {
+
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 0,
+                            top: 0,
+                            left: 0
+                        }).animate({ left: -$(this).width(), top: 0 }, 300)
+                    }, 100)
+
+                }
+                if (yo && (x > $(this).width() - 20)) {
+
+                    setTimeout(function () {
+                        p.css({
+                            zIndex: 0,
+                            top: 0,
+                            left: 0
+                        }).animate({ left: $(this).width(), top: 0 }, 300)
+                    }, 100)
+
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
