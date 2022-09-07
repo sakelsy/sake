@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <!-- <script src="./jquery.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-image:linear-gradient(45deg,rgb(232, 209, 83),rgb(197, 147, 155));
+        }
+        .sf {
+            display: flex;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 30px;
+
+        }
+
+         li {
+            background-color: white;
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="sf">
+        <ul class="pr"></ul>
+        <ul class="distract"></ul>
+        <ul class="area"></ul>
+    </div>
+
+    <script>
+        $.get("./county.json", function (res, status) {
+            var province = [];
+
+            res.forEach(function (res) {
+                var n = res.split(":")
+                if (n[0].length == 2) {
+                    province.push(n)
+                }
+            });
+            var district = [];
+            res.forEach(function (res) {
+                var n = res.split(":")
+                if (n[0].length == 4) {
+                    district.push(n)
+                }
+            });
+            var area = [];
+            res.forEach(function (res) {
+                var n = res.split(":")
+                if (n[0].length == 6) {
+                    area.push(n)
+                }
+            });
+
+            function Headline(name, dj, number) {
+                this.name = name
+                this.node = document.createElement("li");
+                this.node.innerHTML = name
+                this.node.className = number
+                dj.append(this.node);
+            }
+            province.forEach(function (e, i) {
+                var aa = new Headline(e[1], $(".pr"), e[0])
+            });
+
+            $(".pr li").click(function () {
+                $(this).css("color", "red").siblings().css("color", "black")
+                $(".distract").html(" ")
+                $(".area").html(" ")
+                var a = this.className;
+                district.forEach(function (e) {
+                    if (e[0].substring(0, 2) === a) {
+                        var bb = new Headline(e[1], $(".distract"), e[0])
+                    }
+                })
+                $(".distract li").click(function () {
+                    $(".area").html(" ")
+                    $(this).css("color", "red").siblings().css("color", "black")
+                    var a = this.className;
+                    area.forEach(function (e) {
+                        if (e[0].substring(0, 4) === a) {
+                            var cc = new Headline(e[1], $(".area"), e[0])
+                            console.log("22");
+                        }
+                    })
+                })
+            })
+
+        })
+
+
+    </script>
+</body>
+
+</html>

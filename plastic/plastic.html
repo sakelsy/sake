@@ -39,60 +39,92 @@
 
         </div>
     </section>
-    <section class="title">
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed x-banner"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <a class="navbar-brand" href="#"><img src="./img/logo.png" alt=""></a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">about</a></li>
-                        <li><a href="#">services</a></li>
-                        <li class="x"><a href="#">pages</a>
-                            <ul>
-                                <p>home</p>
-                                <p>home</p>
-                                <p>home</p>
-                                <p>home</p>
-                            </ul>
-                        </li>
-                        <li><a href="#">news</a></li>
-                        <li><a href="#">contact</a></li>
-                        <button type="submit" class="btn btn-default">appionment</button>
-                    </ul>
-                </div>
-            </div >
-
-    <div class="aside">
-        <div class="mask"></div>
-        <div class="content">
+    <div class="mask"></div>
+    <div class="sub">
+        <div class="logo">
             <img src="./img/logo.png" alt="">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">services</a></li>
-            <li><a href=""> pages</a></li>
-            <li><a href="#">news</a></li>
-            <li><a href="#">contact</a></li>
-            <button type="submit" class="btn btn-default xx">appionment</button>
-            <li><i class="fa fa-phone"></i>1-677-124-44227</li>
-            <li><i class="fa fa-map-marker"></i>Los Angeles Gournadi, 1230 Bariasl</li>
-            <li><i class="fa fa-clock-o"></i>Mon to Sat 9:00am to 18:00pm</li>
-            <li><i class="fa fa-facebook x"></i><i class="fa fa-facebook x"></i><i class="fa fa-camera-retro x"></i><i
-                    class="fa fa-futbol-o x"></i></li>
         </div>
-    </div>
+        <div class="subnav">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Service</li>
+                <li class="zone">
+                    Pages <i class="fa fa-angle-right"></i>
+                    <ul class="dropdown">
+                        <li>Pricing</li>
+                        <li>Doctor</li>
+                        <li>Blog</li>
+                    </ul>
+                </li>
+                <li>News</li>
+                <li>contact</li>
+            </ul>
+        </div>
+        <div class="btn">
+            <a href="">appointment</a>
+        </div>
 
-    </section>
+        <ul class="info">
+            <li>
+                <i class="fa fa-phone"></i> 1-677-124-44227
+            </li>
+            <li>
+                <i class="fa fa-map-marker"></i> Los Angeles Gournadi, 1230 Bariasl
+            </li>
+            <li>
+                <i class="fa fa-clock-o"></i> Mon to Sat 9:00am to 18:00pm
+            </li>
+        </ul>
+
+        <ul class="icons">
+            <li href=""><i class="fa fa-facebook"></i></li>
+            <li href=""><i class="fa fa-twitter"></i></li>
+            <li href=""><i class="fa fa-instagram"></i></li>
+            <li href=""><i class="fa fa-dribbble"></i></li>
+        </ul>
+    </div>
+    <header>
+        <div class="nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <img src="./img/logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-10 hidden-md hidden-sm hidden-xs ">
+                        <div class="menus">
+                            <div class="menu">
+                                <ul class="list">
+                                    <li>HOME</li>
+                                    <li>ABOUT</li>
+                                    <li>SERVICE</li>
+                                    <li>
+                                        PAGES
+                                        <ul class="down">
+                                            <li>Pricing</li>
+                                            <li>Doctor</li>
+                                            <li>Blog Details</li>
+                                        </ul>
+                                    </li>
+                                    <li>NEWS</li>
+                                    <li>CONTACT</li>
+                                </ul>
+                            </div>
+                            <div class="btn">
+                                <a href="">appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="open visible-xs visible-sm visible-md">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <section class="word">
         <div class="container">
             <h2 class="col-sm-7">
@@ -482,16 +514,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script>
-        $(".x-banner").click(function () {
-            $(".aside").addClass("open");
-
-        });
-        $(".mask").click(function () {
-            $(".aside").removeClass("open");
-        });
 
 
-        var open = document.querySelector("headre .nav .open");
+
+        var open = document.querySelector("header .nav .open");
 
         $("header .nav .open").on("click", function () {
             $(".mask").css("visibility", "visible");

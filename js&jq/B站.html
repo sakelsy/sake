@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="referrer" content="never">
+    <script src="./jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <div class="stage">
+        <div class="title">
+            <div class="first styleId">
+                <li>题材</li>
+            </div>
+            <div class="second areaId">
+                <li>地区</li>
+            </div>
+            <div class="three isFinish">
+                <li>进度</li>
+            </div>
+            <div class="four isFree">
+                <li>收费</li>
+            </div>
+            <div class="five order">
+                <li>排序</li>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="list">
+            </div>
+        </div>
+
+    </div>
+
+
+    <style>
+        .stage {
+            margin: 0 auto;
+            width: 1400px;
+            
+        }
+
+        .title {
+            margin-top: 30px;
+            /* margin: 30px auto; */
+        }
+
+        .title li {
+            margin-right: 14px;
+            color: rgba(0, 0, 0, .34);
+
+        }
+
+        .title .first,
+        .title .second,
+        .title .three,
+        .title .four,
+        .title .five {
+            display: flex;
+            margin: 15px;
+        }
+
+        .title .first div,
+        .title .second div,
+        .title .three div,
+        .title .four div,
+        .title .five div {
+            margin-left: 29px;
+        }
+
+        .wrapper {
+            /* width: 1000px; */
+            /* margin: 0 auto; */
+        }
+
+        .list {
+            display: flex;
+            justify-content:flex-start;
+            /* align-items: center; */
+            flex-wrap: wrap;
+        }
+
+        .list .card {
+            width: 180px;
+            height: 283px;
+            margin: 20px;
+        }
+
+        img {
+            width: 180px;
+            height: 240px;
+            /* width: 100%;
+            height: 100%; */
+        }
+    </style>
+    <script>
+
+        function Headline(name, dj, number) {
+            this.name = name
+
+            this.node = document.createElement("div");
+
+            this.node.innerHTML = name
+            this.node.className = number
+            dj.append(this.node);
+
+        }
+
+        var a = new Headline("全部", $(".first"), -1);
+        var b = new Headline("热血", $(".first"), 999);
+        var c = new Headline("古风", $(".first"), 997);
+        var d = new Headline("玄幻", $(".first"), 1016);
+        var e = new Headline("奇幻", $(".first"), 998);
+        var f = new Headline("悬疑", $(".first"), 1023);
+        var g = new Headline("都市", $(".first"), 1002);
+        var h = new Headline("历史", $(".first"), 1096);
+        var i = new Headline("武侠仙侠", $(".first"), 1092);
+        var j = new Headline("游戏竞技", $(".first"), 1088);
+        var k = new Headline("悬疑灵异", $(".first"), 1081);
+        var l = new Headline("架空 ", $(".first"), 1063);
+        var m = new Headline("青春", $(".first"), 1060);
+        var n = new Headline("西幻", $(".first"), 1054);
+        var o = new Headline("现代", $(".first"), 1048);
+        var p = new Headline("正能量", $(".first"), 1028);
+        var q = new Headline("科幻", $(".first"), 1015);
+
+
+
+        var r = new Headline("全部", $(".second"), -1);
+        var s = new Headline("大陆", $(".second"), 1);
+        var t = new Headline("日本", $(".second"), 2);
+        var h = new Headline("韩国", $(".second"), 6);
+        var i = new Headline("其他", $(".second"), 5);
+
+        var aa = new Headline("全部", $(".three"), -1);
+        var bb = new Headline("连载", $(".three"), 0);
+        var cc = new Headline("完结", $(".three"), 1);
+
+        var dd = new Headline("全部", $(".four"), 1);
+        var ee = new Headline("免费", $(".four"), 1);
+        var ff = new Headline("付费", $(".four"), 2);
+        var gg = new Headline("等就免费", $(".four"), 3);
+
+        var hh = new Headline("人气推荐", $(".five"), 0);
+        var ii = new Headline("更新时间 ", $(".five"), 1);
+        var gg = new Headline("追漫人数", $(".five"), 2);
+        var qq = new Headline("上架时间", $(".five"), 3);
+
+
+        // show($(".first").children("span").children("div").eq(0))
+        show1(0)
+        show2(0)
+        show3(0)
+        show4(0)
+        show5(0)
+        console.log($(".first").children("div").eq(0));
+        function show1(n) {
+            for (var i = 0; i < $(".first").children("div").length + 1; i++) {
+                // console.log(n === i);
+                if (n == i) {
+                    $(".first").children("div").eq(i).css({
+                        color: "red",
+                    })
+                } else {
+                    $(".first").children("div").eq(i).css({
+                        color: "black",
+                    })
+                }
+
+            }
+        }
+        function show2(k) {
+            for (var i = 0; i < $(".second").children("div").length + 1; i++) {
+                // console.log(k === i);
+                if (k == i) {
+                    $(".second").children("div").eq(i).css({
+                        color: "red",
+                    })
+                } else {
+                    $(".second").children("div").eq(i).css({
+                        color: "black",
+                    })
+                }
+
+            }
+        }
+        function show3(j) {
+            for (var i = 0; i < $(".three").children("div").length + 1; i++) {
+                // console.log(j === i);
+                if (j == i) {
+                    $(".three").children("div").eq(i).css({
+                        color: "red",
+                    })
+                } else {
+                    $(".three").children("div").eq(i).css({
+                        color: "black",
+                    })
+                }
+
+            }
+        }
+        function show4(o) {
+            for (var i = 0; i < $(".four").children("div").length + 1; i++) {
+                // console.log(n === i);
+                if (o == i) {
+                    $(".four").children("div").eq(i).css({
+                        color: "red",
+                    })
+                } else {
+                    $(".four").children("div").eq(i).css({
+                        color: "black",
+                    })
+                }
+
+            }
+        }
+        function show5(f) {
+            for (var i = 0; i < $(".five").children("div").length + 1; i++) {
+                // console.log(n === i);
+                if (f == i) {
+                    $(".five").children("div").eq(i).css({
+                        color: "red",
+                    })
+                } else {
+                    $(".five").children("div").eq(i).css({
+                        color: "black",
+                    })
+                }
+
+            }
+        }
+
+
+        console.log($(".first").children("span").children("div").eq(0));
+
+        console.log($(".first").children("span").length + 1);
+        console.log($(".first").children("span").children("div").eq(1));
+
+        xxx(999, -1, -1, 0, 1)
+
+        $(".title div ").click(function () {
+            // console.log($("a").alter("classname"));
+            // var xx = this.className;
+            $(".wrapper").html = (" ");
+            var xx = 999
+            var yy = -1
+            var ss = -1
+            var hh = 0
+            var ll = 1
+            // show($(this))
+            // console.log();
+            if ($(this).parent().is(".styleId")) {
+                xx = this.className
+                show1($(this).index() - 1)
+            } else if ($(this).parent().is(".areaId")) {
+                yy = this.className
+                show2($(this).index() - 1)
+            } else if ($(this).parent().is(".isFinish ")) {
+                ss = this.className
+                show3($(this).index() - 1)
+            } else if ($(this).parent().is(".isFree")) {
+                hh = this.className
+                show4($(this).index() - 1)
+            } else if ($(this).parent().is(".order")) {
+                ll = this.className
+                show5($(this).index() - 1)
+            }
+
+            console.log(xx, yy, ss, hh, ll);
+            xxx(xx, yy, ss, hh, ll)
+            // console.log($(this).parent().is(".styleId"));
+
+        })
+
+        function xxx(x, y, s, h, l) {
+            // xxx.css("color","red");
+
+            $.ajax({
+                url: "https://apis.netstart.cn/bcomic/ClassPage?styleId=" + x + "&areaId=" + y + "&isFinish=" + s + "&order=" + h + "&pageNum=" + l + "&pageSize=39&isFree=-1", success: function (aa) {
+                    console.log(aa.data[0]);
+                    var liNode = document.createElement("li");
+                    liNode.innerText = aa.data[0].title;
+                    for (var i = 0; i < aa.data.length; i++) {
+
+                        $(".list").prepend('<div class="card"> <img src="' + aa.data[i].vertical_cover + '" alt=""> <li>' + aa.data[i].title + '</li> </div>')
+
+                    }
+
+
+                }
+            });
+        }
+
+
+
+    </script>
+</body>
+
+
+</html>
