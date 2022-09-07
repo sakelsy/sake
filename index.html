@@ -9,19 +9,41 @@
     <link rel="stylesheet" href="./minireset.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        body{
-            background-image:linear-gradient( #ead6eed6, #a0f1eab4);
-            height: 200vh;
+        body {}
+
+        .bg {
+            background-image: url(./img/body-bg.png);
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #d6dde6;
+            background-position: center 100px;
+            background-size: cover;
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            z-index: -1;
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
         }
+
+
         .stage {
             width: 1000px;
-            margin: 0 auto;
+            margin: 30px auto;
+            padding: 50px;
+            background-color: white;
+            height: 850px;
+            border-radius: 20px;
         }
 
         h2 {
             text-align: left;
             font-size: 40px;
             font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #495369;
         }
 
         .control {
@@ -31,13 +53,16 @@
         .control span {
             padding: 15px;
             box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-            color: grey;
-            background-color: #fff;
+            color: #495369;
+            /* background-color: rgb(199, 192, 192); */
+            margin-right: 20px;
+            border-radius: 20px;
         }
 
-        .control span:hover{
-            color: black;
-        }
+        /* .control span:hover {
+            color: white;
+            background-color: #fd7030;
+        } */
 
         .list {
             margin-top: 50px;
@@ -46,8 +71,10 @@
 
         .list .card {
             width: 1000px;
-
-
+            
+        }
+        .card.active{
+           animation: yy 1s forwards;
         }
 
         .list .card .content {
@@ -69,13 +96,14 @@
         }
 
         .list .card li:hover a {
-            display: block;
+            /* display: block; */
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: xx .3s linear forwards;
         }
 
-        .list .card li:hover{
+        .list .card li:hover {
             transition: all .3s;
             transform: scale(1.1);
         }
@@ -86,16 +114,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(45deg, #ead6ee8e, #a0f1ea72);
+            /* background-image: linear-gradient(45deg, #ead6ee8e, #a0f1ea72); */
+            background-color: #fd71308a;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 20px;
             display: none;
+            /* transition: all .3s; */
+        }
+
+        @keyframes xx {
+            from {
+                display: none;
+                transform: scale(0);
+            }
+
+            to {
+                display: block;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes yy {
+            from {
+                display: none;
+                transform: scale(0) rotate(0);
+                
+            }
+
+            to {
+                display: block;
+                transform: scale(1) rotate(360deg);
+            }
         }
 
         .list .card li a {
-            color: black;
+            color: white;
             text-decoration: none;
             font-size: 25px;
             /* font-weight: bold; */
@@ -163,6 +218,7 @@
             background-image: url(./img/clock.PNG);
 
         }
+
         .list .card2 li:nth-of-type(8) {
             background-image: url(./img/dm.PNG);
 
@@ -186,6 +242,7 @@
             background-image: url(./img/white\ block.PNG);
 
         }
+
         .list .card3 li:nth-of-type(3) {
             background-image: url(./img/zsk.PNG);
 
@@ -266,7 +323,9 @@
 </head>
 
 <body>
+    <div class="bg"></div>
     <div class="stage">
+
         <h2>案例</h2>
         <div class="control">
             <span>网页</span>
@@ -343,13 +402,44 @@
     </div>
 
     <script>
-        $(".control").children().eq(0).css("color","black")
+        $(".control").children().eq(0).css({
+            color: "white",
+            backgroundColor: "#fd7030"
+        })
+        // show(0)
+
+        // console.log($(".control").children().length);
+        // function show(n) {
+        //     for (let i = 0; i < $(".control").children().length; i++) {
+        //         if (i == n) {
+        //             $(".control").children().eq(i).css({
+        //                 color: "white",
+        //                 backgroundColor: "#fd7030"
+        //             })
+        //         }else{
+        //             $(".control").children().eq(i).css({
+        //                 color: "grey",
+        //                 backgroundColor: "white"
+        //             })
+        //         }
+
+        //     }
+        // }
         $(".control span").click(function () {
             $(".list").children().eq($(this).index()).css("display", "block").siblings().css("display", "none")
+            $(".list").children().eq($(this).index()).addClass("active").siblings().removeClass("active")
+            console.log($(this).index());
+            // show($(this).index())
             $(this).css({
-                color:"black",
-            }).siblings().css("color","grey")
+                color: "white",
+                backgroundColor: "#fd7030"
+            }).siblings().css({
+                color: "#495369",
+                backgroundColor: "white"
+            })
         })
+
+
     </script>
 </body>
 

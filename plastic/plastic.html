@@ -71,26 +71,26 @@
                         <button type="submit" class="btn btn-default">appionment</button>
                     </ul>
                 </div>
-            </div><!-- /.container-fluid -->
-        </nav>
-        <div class="aside">
-            <div class="mask"></div>
-            <div class="content">
-                <img src="./img/logo.png" alt="">
-                <li><a href="#">home</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">services</a></li>
-                <li><a href=""> pages</a></li>
-                <li><a href="#">news</a></li>
-                <li><a href="#">contact</a></li>
-                <button type="submit" class="btn btn-default xx">appionment</button>
-                <li><i class="fa fa-phone"></i>1-677-124-44227</li>
-                <li><i class="fa fa-map-marker"></i>Los Angeles Gournadi, 1230 Bariasl</li>
-                <li><i class="fa fa-clock-o"></i>Mon to Sat 9:00am to 18:00pm</li>
-                <li><i class="fa fa-facebook x"></i><i class="fa fa-facebook x"></i><i
-                        class="fa fa-camera-retro x"></i><i class="fa fa-futbol-o x"></i></li>
-            </div>
+            </div >
+
+    <div class="aside">
+        <div class="mask"></div>
+        <div class="content">
+            <img src="./img/logo.png" alt="">
+            <li><a href="#">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href=""> pages</a></li>
+            <li><a href="#">news</a></li>
+            <li><a href="#">contact</a></li>
+            <button type="submit" class="btn btn-default xx">appionment</button>
+            <li><i class="fa fa-phone"></i>1-677-124-44227</li>
+            <li><i class="fa fa-map-marker"></i>Los Angeles Gournadi, 1230 Bariasl</li>
+            <li><i class="fa fa-clock-o"></i>Mon to Sat 9:00am to 18:00pm</li>
+            <li><i class="fa fa-facebook x"></i><i class="fa fa-facebook x"></i><i class="fa fa-camera-retro x"></i><i
+                    class="fa fa-futbol-o x"></i></li>
         </div>
+    </div>
 
     </section>
     <section class="word">
@@ -152,7 +152,7 @@
                                 <div class="col-lg-6 col-md-6 y">
                                     <div class="consultation__video set-bg">
                                         <img src="./img/consultation-video.jpg" alt="">
-                                        <a href=""class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                                        <a href="" class="play-btn video-popup"><i class="fa fa-play"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -489,6 +489,18 @@
         $(".mask").click(function () {
             $(".aside").removeClass("open");
         });
+
+
+        var open = document.querySelector("headre .nav .open");
+
+        $("header .nav .open").on("click", function () {
+            $(".mask").css("visibility", "visible");
+            $(".sub").css("left", "0")
+        })
+        $(".mask").on("click", function () {
+            $(this).css("visibility", "hidden");
+            $(".sub").css("left", "-300px")
+        })
 
     </script>
 </body>
