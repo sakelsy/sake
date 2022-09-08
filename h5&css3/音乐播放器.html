@@ -16,8 +16,7 @@
     <div class="stage">
         <div class="player">
             <div class="top">
-                <div class="pic">
-                </div>
+                <div class="pic"></div>
                 <div class="control">
                     <div class="fir">
                         <i class="fa fa-heart "></i>
@@ -46,10 +45,11 @@
         </div>
     </div>
     <style>
-        body{
+        body {
             height: 100vh;
-            background-image: linear-gradient(45deg, rgb(98, 113, 245),rgb(142, 197, 231));
+            background-image: linear-gradient(45deg, rgb(98, 113, 245), rgb(142, 197, 231));
         }
+
         .stage {
             width: 1200px;
             margin: 30px auto;
@@ -280,8 +280,17 @@
         var bt = ["海芋恋", "夏天", "吟游诗人"];
         var aut = ["范世錡", "李玖哲", "陈奕迅"];
         var miuc = ["./img/1.mp3", "./img/2.mp3", "./img/3.mp3"]
-        var pic = ["1", "2", "3"]
-        $(".pic").append('<img src="./img/' + pic[0] + '.jpg" alt="">')
+        var pic = ["0", "1", "2"]
+        var sz = ["a", "a", "a"];
+        // var z = $("img").attr("id") - 1;
+        $(".pic").append('<img id="' + pic[0] + '" src="./img/' + pic[0] + '.jpg" alt="">')
+        // var z = Number( $("img").attr("id") )- 1;
+        // var l = 0
+        // if (sz[l].includes("b")) {
+        //     $(".control .fir").children().eq(0).css("color", "red")
+        // } else {
+        //     $(".control .fir").children().eq(0).css("color", "grey")
+        // }
         nextbtn.onclick = function () {
             currentt++;
             if (currentt >= 3) {
@@ -292,16 +301,25 @@
                 $("img.active").remove()
             }, 1000)
             setTimeout(function () {
-                $(".pic").append('<img src="./img/' + pic[currentt] + '.jpg" alt="">')
+                $(".pic").append('<img id="' + pic[currentt] + '" src="./img/' + pic[currentt] + '.jpg" alt="">')
             }, 200)
             $(".content h3").text(bt[currentt])
             $(".content p").text(aut[currentt])
             $("#audio").attr("src", miuc[currentt])
-
+            // console.log($("img").attr("id"));
+            var z = Number($("img").attr("id")) + 1;
+            if (z == 3) {
+                z = 0;
+            }
+            if (sz[z].includes("b")) {
+                $(".control .fir").children().eq(0).css("color", "red")
+            } else {
+                $(".control .fir").children().eq(0).css("color", "grey")
+            }
         }
         prevbtn.onclick = function () {
             currentt--;
-            console.log(currentt);
+            // console.log(currentt);
             if (currentt < 0) {
                 currentt = 2;
             }
@@ -310,17 +328,29 @@
                 $("img.posi").remove()
             }, 1000)
             setTimeout(function () {
-                $(".pic").append('<img src="./img/' + pic[currentt] + '.jpg" alt="">')
+                $(".pic").append('<img id="' + pic[currentt] + '" src="./img/' + pic[currentt] + '.jpg" alt="">')
             }, 200)
             $(".content h3").text(bt[currentt])
             $(".content p").text(aut[currentt])
             $("#audio").attr("src", miuc[currentt])
+            console.log($("img").attr("id"));
+            var z = Number($("img").attr("id")) - 1;
+            if (z < 0) {
+                z = 2;
+            }
+            console.log(z);
+            if (sz[z].includes("b")) {
+                $(".control .fir").children().eq(0).css("color", "red")
+            } else {
+                $(".control .fir").children().eq(0).css("color", "grey")
+            }
         }
 
         var a;
         var b;
         var c;
         var d = 0;
+        var fo = true;
 
         $(".jdt").mousedown(function (event) {
             // console.log(event.offsetX);
@@ -380,9 +410,25 @@
         })
         $("#audio")[0].oncanplay = function () {
             a = $("#audio")[0].duration
-            console.log(parseInt(a % 60));
+            // console.log(parseInt(a % 60));
             $(".content .zg").text(parseInt(a / 60) + ":" + String(parseInt(a % 60)).padStart(2, "0"))
         }
+
+        $(".control .fir").children().eq(0).click(function () {
+            console.log($("img").attr("id"));
+            var z = Number($("img").attr("id")) + 1;
+            console.log(z);
+            if (fo === true & sz[z].includes("a")) {
+                $(".control .fir").children().eq(0).css("color", "red")
+                sz[z - 1] = "b"
+                fo = false;
+            } else {
+                $(".control .fir").children().eq(0).css("color", "grey")
+                sz[z -1] = "a"
+                fo = true
+            }
+
+        })
 
     </script>
 </body>
