@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            background-color: lightblue;
+            
+        }
+        .wrapper{
+            width: 900px;
+            margin: 40px auto;
+            
+        }
+        body{
+            background-image: linear-gradient(45deg,rgb(235, 138, 138),rgb(92, 92, 216));
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <canvas id="canvas1" width="400" height="400"></canvas>
+        <canvas id="canvas2" width="400" height="400"></canvas>
+    </div>
+
+    <script>
+        var canvas = document.getElementById("canvas1");
+        var context = canvas.getContext("2d");
+        context.strokeText("100", 0, 300)
+        context.strokeText("200", 0, 200)
+        context.strokeText("300", 0, 100)
+        context.strokeStyle = "grey";
+        context.setLineDash([5, 10]);
+        context.moveTo(20, 100);
+        context.lineTo(400, 100);
+        context.stroke();
+        // context.closePath();
+        context.moveTo(20, 200);
+        context.lineTo(400, 200);
+        context.stroke();
+        // context.closePath();
+        context.moveTo(20, 300);
+        context.lineTo(400, 300);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.setLineDash([]);
+        var rd = parseInt(Math.random() * ((350 - 50) + 50))
+        context.arc(50, rd, 5, 0, 2 * Math.PI, true)
+        context.fill()
+        context.closePath();
+        context.moveTo(100, 100)
+        context.lineTo(50, rd);
+        context.closePath();
+        context.stroke();
+        context.beginPath();
+        context.arc(100, 100, 5, 0, 2 * Math.PI, true)
+        context.fill()
+        context.closePath();
+        var shu = 50
+        var sum = 55;
+        for (let i = 2; i < 7; i++) {
+            var rd = parseInt(Math.random() * ((350 - 50) + 50))
+            console.log(rd);
+            var all = shu + i * shu
+            context.lineTo(all, rd);
+            // context.beginPath(); 
+            context.closePath();
+            context.stroke();
+            context.beginPath();
+            context.arc(all, rd, 5, 0, 2 * Math.PI, true)
+            context.fill()
+
+        }
+
+        context.beginPath();
+        context.moveTo(20, 380);
+        context.lineTo(380, 380);
+
+        context.stroke();
+        context.beginPath();
+        context.moveTo(20, 20);
+        context.lineTo(20, 380);
+        context.stroke();
+
+
+
+        for (let i = 0; i < 7; i++) {
+            var all = shu + i * shu
+            context.strokeText(all, all, 390)
+            context.beginPath();
+            context.moveTo((sum + i * 50), 380);
+            context.lineTo((sum + i * 50), 370);
+            context.stroke();
+        }
+
+
+
+
+    </script>
+
+
+    <script>
+        var canvas = document.getElementById("canvas2");
+        var context = canvas.getContext("2d");
+        context.strokeText("100", 0, 300)
+        context.strokeText("200", 0, 200)
+        context.strokeText("300", 0, 100)
+        context.strokeStyle = "grey";
+        context.setLineDash([5, 10]);
+        context.moveTo(20, 100);
+        context.lineTo(400, 100);
+        context.stroke();
+        // context.closePath();
+        context.moveTo(20, 200);
+        context.lineTo(400, 200);
+        context.stroke();
+        // context.closePath();
+        context.moveTo(20, 300);
+        context.lineTo(400, 300);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.setLineDash([]);
+        var shu = 50
+        var sum = 55;
+        var hh = 45;
+        for (let i = 0; i < 7; i++) {
+            var rd = parseInt(Math.random() * ((350 - 50) + 50))
+            context.fillStyle = '#' + String(Math.random()).slice(-6);
+            context.fillRect((shu + i * shu), (400 - rd - 20), 25, rd);
+            context.beginPath();
+
+        }
+
+        context.beginPath();
+        context.moveTo(20, 380);
+        context.lineTo(380, 380);
+
+        context.stroke();
+        context.beginPath();
+        context.moveTo(20, 20);
+        context.lineTo(20, 380);
+        context.stroke();
+
+
+
+        for (let i = 0; i < 7; i++) {
+            var all = shu + i * shu
+            context.strokeText(all, all, 390)
+            context.beginPath();
+            context.stroke();
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
