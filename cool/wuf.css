@@ -1,0 +1,86 @@
+.lunbo .container .row {
+  position: relative;
+}
+.lunbo .container .row .window {
+  overflow: hidden;
+}
+.lunbo .container .row .window .control {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 30px;
+}
+.lunbo .container .row .window .control div {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.lunbo .container .row .window .control .next {
+  position: absolute;
+  right: 24px;
+}
+.lunbo .container .row .window .stage {
+  width: 4200px;
+  display: flex;
+}
+.lunbo .container .row .window .stage .item {
+  width: 367px;
+  margin-right: 20px;
+}
+.lunbo .container .row .window .stage .item img {
+  display: block;
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.lunbo .container .row .window .stage .item .content {
+  background-color: #282b2f;
+  border: 1px solid #404245;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 30px;
+}
+.lunbo .container .row .window .stage .item .content h4 {
+  color: #fff;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.lunbo .container .row .window .stage .item .content span {
+  color: #fff;
+  display: inline-block;
+  width: 48%;
+  font-size: 15px;
+}
+.lunbo .container .row .window .stage .item .content span strong {
+  font-size: 20px;
+}
+.lunbo .container .row .window .stage .item .content .control-3 {
+  margin-top: 20px;
+  margin-bottom: -30px;
+}
+.lunbo .container .row .window .stage .item .content .control-3 a {
+  font-size: 14px;
+  color: #fff;
+  background-color: #7453fc;
+  border: 1px solid #7453fc;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+/*# sourceMappingURL=./wuf.css.map */

@@ -187,11 +187,15 @@
 .about {
   margin-top: 20px;
 }
-.about .title {
+.about .wraper {
+  width: 1200px;
+  margin: 0 auto;
+}
+.about .wraper .title {
   width: 700px;
   margin: 0 auto;
 }
-.about .title h2 {
+.about .wraper .title h2 {
   text-align: center;
   font-size: 50px;
   color: #121212;
@@ -199,7 +203,7 @@
   font-weight: bold;
   padding: 0;
 }
-.about .title p {
+.about .wraper .title p {
   text-align: center;
   font-size: 17px;
   line-height: 25px;
@@ -207,10 +211,10 @@
   padding-top: 30px;
   display: block;
 }
-.about img {
+.about .wraper img {
   margin-top: 30px;
 }
-.about button {
+.about .wraper button {
   max-width: 292px;
   height: 60px;
   padding: 15px 0px;

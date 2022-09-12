@@ -4,15 +4,17 @@
 }
 
 .top {
-    background-image: url(./img/banner2.jpg);
-    height: 650px;
-    position: relative;
+   
+        background-image: url(./img/banner2.jpg);
+        height: 650px;
+        position: relative;
 
-    .while {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+        .while {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    
 }
 
 .clear::after {
@@ -239,53 +241,59 @@
 
 .about {
     margin-top: 20px;
-
-    .title {
-        width: 700px;
+    .wraper{
+        width: 1200px;
         margin: 0 auto;
-
-        h2 {
-            text-align: center;
-            font-size: 50px;
-            color: #121212;
-            line-height: 45px;
-            font-weight: bold;
-            padding: 0;
+        .title {
+            width: 700px;
+            margin: 0 auto;
+    
+            h2 {
+                text-align: center;
+                font-size: 50px;
+                color: #121212;
+                line-height: 45px;
+                font-weight: bold;
+                padding: 0;
+            }
+    
+            p {
+                text-align: center;
+                font-size: 17px;
+                line-height: 25px;
+                color: #0a0a0a;
+                padding-top: 30px;
+                display: block;
+            }
         }
-
-        p {
-            text-align: center;
-            font-size: 17px;
-            line-height: 25px;
-            color: #0a0a0a;
-            padding-top: 30px;
+    
+        img {
+            margin-top: 30px;
+        }
+    
+        button {
+            max-width: 292px;
+            height: 60px;
+            padding: 15px 0px;
+            border: none;
+            margin-top: 45px !important;
+            border-radius: 30px;
+            margin: 0 auto;
             display: block;
+            background-color: #001935;
+            font-size: 17px;
+            color: #fff;
+            width: 100%;
+            max-width: 177px;
+            text-align: center;
+            transition: ease-in all 0.5s;
+            font-weight: 500
         }
+    
     }
+    
 
-    img {
-        margin-top: 30px;
-    }
-
-    button {
-        max-width: 292px;
-        height: 60px;
-        padding: 15px 0px;
-        border: none;
-        margin-top: 45px !important;
-        border-radius: 30px;
-        margin: 0 auto;
-        display: block;
-        background-color: #001935;
-        font-size: 17px;
-        color: #fff;
-        width: 100%;
-        max-width: 177px;
-        text-align: center;
-        transition: ease-in all 0.5s;
-        font-weight: 500
-    }
-
+   
 }
 
 .banance {
@@ -658,6 +666,7 @@
 
                 .card {
                     width: 33.33%;
+
                     h3 {
                         font-weight: 600;
                         font-size: 20px;
@@ -673,7 +682,8 @@
                         font-size: 17px;
                         line-height: 32px;
                         display: block;
-                        i{
+
+                        i {
                             margin-right: 10px;
                         }
                     }
@@ -687,12 +697,14 @@
                         font-weight: normal;
                         text-align: left;
                     }
-                    .icons{
+
+                    .icons {
                         width: 200px;
                         margin-top: 20px;
                         display: flex;
                         justify-content: space-between;
-                        i{
+
+                        i {
                             width: 40px;
                             height: 40px;
                             background-color: white;
@@ -700,8 +712,9 @@
                             align-items: center;
                             justify-content: center;
                             border-radius: 50%;
-                            &::before{
-                                color:  #001935;
+
+                            &::before {
+                                color: #001935;
                                 font-size: 18px;
                             }
                         }
@@ -709,11 +722,13 @@
                 }
             }
         }
-        .foot{
+
+        .foot {
             margin-top: 60px;
             background-color: #001935;
             box-shadow: 3px 0px 10px rgb(0 0 0 / 42%);
-            p{
+
+            p {
                 color: #fff;
                 font-size: 17px;
                 line-height: 22px;

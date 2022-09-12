@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片悬停效果</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image:linear-gradient(45deg,rgb(0, 64, 255),pink);
+            height: 100vh;
+        }
+
+        .stage {
+            width: 250px;
+            height: 400px;
+            margin-top: 30px;
+
+
+        }
+
+        .img {
+            transform-style: preserve-3d;
+            width: 250px;
+            height: 400px;
+            background-image: url(./img/pexels-photo-2832039.jpeg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            transform: rotateY(45deg);
+            box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+            transition: all .3s;
+        }
+
+        .img::before {
+            position: absolute;
+            width: 60px;
+            height: 100%;
+            content: "";
+            background-image: url(./img/pexels-photo-2832039.jpeg);
+            background-size: cover;
+            transform: rotateY(90deg);
+            transform-origin: 0 50%;
+            filter: brightness(70%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="img">
+        </div>
+    </div>
+</body>
+<script>
+    $(".img").mouseenter(function () {
+        console.log(123);
+        // $(".img").css(" transform","rotateY(45deg)")
+        $(".img").css({
+            transform: "rotateY(45deg)",
+        })
+
+        
+    })
+    $(".img").mouseleave(function () {
+        $(".img").css({
+            transform: "rotateY(0deg)",
+        })
+    })
+</script>
+
+</html>

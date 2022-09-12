@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>3D相册</title>
     <link rel="stylesheet" href="./minireset.css">
 </head>
 
@@ -37,7 +37,7 @@
             /* background-color:aqua; */
             transform: rotateX(-20deg);
             animation: allpic 10s 8s linear alternate infinite;
-            
+
         }
 
         .box>div {
@@ -69,17 +69,20 @@
             background-color: lightcyan;
             animation: fou 1s 5S linear forwards;
         }
+
         .box .fourth {
             background-image: url(./img//pexels-photo-1462636.jpeg);
             /* background-color: lightgoldenrodyellow; */
             /* transform: rotateY(120deg) translateZ(300px);  */
             animation: thr 1s 4S linear forwards;
         }
+
         .five {
             background-image: url(./img/pexels-photo-139829.jpeg);
             /* transform: rotateY(240deg) translateZ(300px); */
             animation: two 1s 3S linear forwards;
         }
+
         .six {
             background-image: url(./img/pexels-photo-1758144.jpeg);
             background-color: lightgreen;
@@ -126,7 +129,7 @@
                 transform: rotateY(240deg) translateZ(300px);
             }
         }
-        
+
         @keyframes thr {
             0% {
                 perspective-origin: left 100%;
@@ -146,6 +149,7 @@
                 transform: rotateY(180deg) translateZ(300px);
             }
         }
+
         @keyframes fou {
             0% {
                 perspective-origin: left 100%;
@@ -166,7 +170,7 @@
             }
         }
 
-        
+
         @keyframes fir {
             0% {
                 perspective-origin: left 100%;
@@ -207,15 +211,19 @@
             }
         }
 
-        @keyframes allpic{
-            from{
-                transform: rotateY(0deg)  rotateX(-20deg);
+        @keyframes allpic {
+            from {
+                transform: rotateY(0deg) rotateX(-20deg);
             }
-            to{
+
+            to {
                 transform: rotateY(360deg) rotateX(20deg);
             }
         }
     </style>
+
+    <script>
+    </script>
 </body>
 
 </html>

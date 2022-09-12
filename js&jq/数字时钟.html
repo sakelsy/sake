@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字时钟</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <main>
+        <div class="stage">
+            <section class="hh">
+                <div class="s1">
+                    <span>0</span>
+                </div>
+                <div class="s2">
+                    <span>0</span>
+                </div>
+            </section>
+            <h1>:</h1>
+            <section class="mm">
+                <div class="s1">
+                    <span>0</span>
+                </div>
+                <div class="s2">
+                    <span>0</span>
+                </div>
+            </section>
+            <h1>:</h1>
+            <section class="ss">
+                <div class="s1">
+                    <span>0</span>
+                </div>
+                <div class="s2">
+                    <span>0</span>
+                </div>
+            </section>
+        </div>
+    </main>
+    <style>
+        body{
+            background-color: rgb(30,30,30);
+        }
+        main {
+            display: flex;
+            background: linear-gradient(to right bottom, rgb(2, 99, 225), rgb(235, 24, 54));
+            border-radius: 22px;
+            width: 688px;
+            height: 158px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .stage {
+            width: 680px;
+            height: 150px;
+            background-color: rgb(30,30,30);
+            border-radius: 22px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            display: flex;
+        }
+
+        section {
+            display: flex;
+        }
+
+        section div {
+            width: 80px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        h1{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            font-size: 7em;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        section div span {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            transition: all 0.3s;
+            display: flex;
+            font-size: 7em;
+            align-items: center;
+            color: aliceblue;
+            padding:  0 10px;
+
+        }
+
+        section div span.active {
+            animation: a .5s linear forwards;
+        }
+
+        @keyframes a {
+            0% {
+                transform: scale(0.5);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+
+    <script>
+        function showNewNum(element, n) {
+            var firstSpanDom = element.getElementsByTagName("span")[0];
+            if (firstSpanDom.innerText !== n) {
+                var newSpanDom = document.createElement("span");
+                newSpanDom.innerText = n;
+                newSpanDom.className = "active"
+                element.appendChild(newSpanDom);
+                firstSpanDom.style.marginTop = "-100px";
+                setTimeout(function () {
+                    element.removeChild(firstSpanDom);
+                }, 300)
+            }
+        }
+
+        setInterval(function () {
+            var now = new Date();
+            var hh = String(now.getHours()).padStart(2, "0");
+            var mm = String(now.getMinutes()).padStart(2, "0");
+            var ss = String(now.getSeconds()).padStart(2, "0");
+
+            var hhDom = document.querySelector(".hh");
+            var mmDom = document.querySelector(".mm");
+            var ssDom = document.querySelector(".ss");
+
+            hhDom.querySelectorAll("div").forEach(function (ele, i) {
+                showNewNum(ele, hh[i]);
+            });
+            mmDom.querySelectorAll("div").forEach(function (ele, i) {
+                showNewNum(ele, mm[i]);
+            });
+            ssDom.querySelectorAll("div").forEach(function (ele, i) {
+                showNewNum(ele, ss[i]);
+            });
+        }, 1000);
+    </script>
+</body>
+
+</html>

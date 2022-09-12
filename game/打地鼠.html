@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    .stage {
+        position: relative;
+        /* background-image: url(./t019c0bcb5206a6eca4.png); */
+        /* background-repeat: no-repeat; */
+        /* background-size: cover; */
+        background-color: rgb(130, 231, 29);
+        
+    }
+
+    .stage i {
+        position: absolute;
+        background-image: url(./true\ \(1\).jfif)
+    }
+    h2{
+        font-size: 20px;
+        top: 20px;
+        left: 20px;
+        font-weight: bold;
+        position:absolute;
+        z-index: 3;
+    }
+</style>
+
+<body>
+    <div class="stage">
+    </div>
+    <h2>游戏得分 <span>0</span></h2>
+    <script>
+        var stageEl = document.querySelector(".stage");
+
+
+        // console.log(window.innerHeight);
+        // console.log(window.innerWidth);
+
+        // function show() {
+
+            var score = 0;
+            setInterval(function () {
+                // reload()
+                
+                var stageHeight = window.innerHeight;
+                var stageWidth = window.innerWidth;
+
+                stageEl.style.width = stageWidth + 'px';
+                stageEl.style.height = stageHeight + 'px';
+                var s = Math.floor(Math.random() * (100 - 50 + 1) + 50);
+                var xr = Math.floor(Math.random() * stageWidth);
+                var yr = Math.floor(Math.random() * stageHeight);
+
+                if (xr - s < 0) {
+                    xr = 0
+                }
+                if (yr - s < 0) {
+                    yr = 0
+                }
+
+                function Dot(size, x, y) {
+                    this.size = size;
+                    this.x = x;
+                    this.y = y;
+
+                    this.node = document.createElement("i");
+                    this.node.style.width = this.size + 'px';
+                    this.node.style.height = this.size + 'px';
+                    this.node.style.left = this.x + 'px';
+                    this.node.style.top = this.y + 'px';
+                    this.node.style.backgroundImage = "url(./true\ \(1\).jfif)";
+                    this.node.style.backgroundSize = "cover";
+                    this.node.style.backgroundPosition = "center";
+
+                    stageEl.appendChild(this.node);
+                }
+                var d = new Dot(s, xr - s, yr - s);
+            }, 800);
+
+            setInterval(function () {
+                $('.stage').children().eq(1).remove()
+            },1500)
+        // }
+        // show()
+        stageEl.onclick = function (e) {
+            console.log(e.target);
+            console.log(!e.target === stageEl);
+
+            if (e.target === stageEl) {
+                alert("游戏失败");
+                location.reload();
+                // show()
+            } else {
+                score++;
+                $("h2 span").text(score)
+                console.log(score);
+                stageEl.removeChild(e.target)
+            }
+        }
+    </script>
+</body>
+
+</html>

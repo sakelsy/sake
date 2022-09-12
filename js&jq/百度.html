@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度搜索联想</title>
+    <link rel="stylesheet" href="./minireset.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <style>
+        .stage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        img{
+            width: 20%;
+        }
+        .content{
+            width: 700px;
+            text-align: center;
+        }
+        input{
+            width: 550px;
+            height: 44px;
+            border-radius:  20px 0 0 20px ;
+            box-sizing: border-box;
+            padding: 20px;
+            font-size: 20px;
+        }
+        button{
+            padding: 11px 20px;
+            border-radius: 0 20px 20px 0;
+            border: none;
+            margin-left: -5px;
+            line-height: 25px;
+            background-color: #4e6ef2;
+            color: aliceblue;
+            font-weight: 200;
+            font-size: 18px;
+        }
+        ul{
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none;
+        }
+        li{
+            font-size: 18px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <img src="./img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="">
+        <div class="content">
+            <input type="text" name="" id=""> <button>百度一下</button>
+            <ul></ul>
+        </div>
+    </div>
+
+   <script>
+    // var bool = true;
+    $("input").on("input", function (data) {    
+            $("ul").css("display","block")
+            $.get("https://www.baidu.com/sugrec?ie=utf-8&json=1&prod=pc&wd=" + $("input").val(), function (data) {
+                $("ul").html(" ");
+                $("ul").append("")
+                var items = JSON.parse(data);
+                console.log( $("input").val().length);
+                if ($("input").val().length == 0) {
+                    $("ul").css("display","none")
+                }
+                $("ul").html(" ");
+                if (items.g) {
+                    $(items.g).each(function (idx, ele) {
+                        var liNode = document.createElement("li");
+                        liNode.innerText = ele.q;
+                        document.querySelector("ul").appendChild(liNode);
+                        $("ul").prepend("<li>" + ele.q + "</li>");
+                        $("li").innerText = ele.q;
+                    });
+                }
+            })
+        })
+        // if (condition) {
+        //     block
+        // }
+        
+   </script>
+</body>
+
+</html>

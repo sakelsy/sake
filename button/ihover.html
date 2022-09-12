@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ihover</title>
     <link rel="stylesheet" href="./minireset.css">
 </head>
 
@@ -78,9 +78,29 @@
         </div>
     </div>
 
+    <div class="effect8">
+        <div class="img4">
+        </div>
+        <div class="mask7">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+    <div class="effect9">
+        <div class="img5">
+        </div>
+        <div class="mask8">
+            <h3>Heading here</h3>
+            <p>Heading here</p>
+        </div>
+    </div>
+
 
 
     <style>
+        body{
+            background-image: linear-gradient(60deg,rgb(209, 209, 104),rgb(205, 110, 220));
+        }
         .effect1 {
             width: 230px;
             height: 230px;
@@ -90,7 +110,7 @@
             padding: 20px;
             border-radius: 50%;
             background-color: red;
-            margin-left: 100px;
+            margin-left: 200px;
             margin-top: 20px;
 
         }
@@ -184,8 +204,8 @@
             background-color: red;
             /* background-image: url(./fxxx.jpg);
             background-size: cover; */
-            margin-left: 500px;
-            margin-top: 20px;
+            margin-left: 1000px;
+            margin-top: -230px;
 
         }
 
@@ -286,7 +306,7 @@
             background-color: red;
             /* background-image: url(./fxxx.jpg);
             background-size: cover; */
-            margin-left: 100px;
+            margin-left: 600px;
             margin-top: 20px;
 
         }
@@ -386,7 +406,7 @@
             padding: 20px;
             border-radius: 50%;
             /* background-color: red; */
-            margin-left: 500px;
+            margin-left: 200px;
             margin-top: 70px;
 
             z-index: 9;
@@ -490,8 +510,8 @@
             padding: 20px;
             border-radius: 50%;
             /* background-color: red; */
-            margin-left: 100px;
-            margin-top: 70px;
+            margin-left: 1000px;
+            margin-top: -230px;
 
             z-index: 9;
 
@@ -567,7 +587,7 @@
             padding: 20px;
             border-radius: 50%;
             /* background-color: red; */
-            margin-left: 500px;
+            margin-left: 200px;
             margin-top: 70px;
 
             z-index: 9;
@@ -606,7 +626,6 @@
             animation: jj .3s linear forwards;
         }
     </style>
-
     <style>
         .effect7 {
             width: 230px;
@@ -617,12 +636,13 @@
             padding: 20px;
             border-radius: 50%;
             /* background-color: red; */
-            margin-left: 100px;
-            margin-top: 70px;
+            margin-left: 1000px;
+            margin-top: -230px;
 
             z-index: 9;
 
         }
+
         .img3 {
             position: absolute;
             top: -20px;
@@ -663,29 +683,205 @@
                 transform: scale(1.1);
                 opacity: 0.7;
             }
-            
+
             50% {
                 transform: scale(1.15);
                 opacity: 0.4;
             }
-            
+
             75% {
                 transform: scale(1.2);
                 opacity: 0.1;
             }
-            
+
             100% {
                 transform: scale(1.25);
                 opacity: 0;
             }
         }
 
-        .effect7:hover  .img3{
+        .effect7:hover .img3 {
             animation: kk 2s linear forwards;
         }
-        .effect7:hover .mask6{
+
+        .effect7:hover .mask6 {
             opacity: 1;
         }
+    </style>
+    <style>
+        .effect8 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            /* background-color: red; */
+            margin-left: 200px;
+            margin-top: 70px;
+
+            z-index: 9;
+
+        }
+        .img4 {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+            /* z-index: 9; */
+            /* animation: ss 4s ease forwards; */
+        }
+        .mask7 {
+            position: absolute;
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            /* z-index: 2; */
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        @keyframes jj2 {
+            0%{
+                transform: scale(1) translateX(0);
+            }
+            50%{
+                transform: scale(0.8) translate(0); 
+                opacity: 1; 
+            }
+            75%{
+                transform: scale(0.8) translateX(-150px); 
+               
+            }
+            100%{
+                transform: scale(0.8) translateX(-250px); 
+                opacity: 0; 
+            }
+            
+        }
+        @keyframes jj1 {
+            0%{
+                transform: scale(0.8) translateX(250px);
+            }
+            50%{
+                transform: scale(0.8) translate(250px); 
+            }
+            100%{
+                transform: scale(1) translateX(0); 
+                opacity: 1;
+            }
+            
+        }
+        
+        .effect8:hover .img4 {
+            animation: jj2 .5s linear forwards;
+        }
+
+        .effect8:hover .mask7 {
+            animation: jj1 .5s .15s linear forwards;
+        }
+    </style>
+    <style>
+         .effect9 {
+            width: 230px;
+            height: 230px;
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 50%;
+            /* background-color: red; */
+            margin-left: 1000px;
+            margin-top: -230px;
+
+            z-index: 9;
+
+        }
+        .mask8 {
+            position: absolute;
+            background-color: rgba(29, 26, 26, 0.301);
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            padding: 35px;
+            box-sizing: border-box;
+            /* z-index: 2; */
+            opacity: 0;
+            transition: all .5s;
+        }
+        .img5 {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            /* background-color: #ecab18; */
+            background-image: url(./img/fxxx.jpg);
+            background-size: cover;
+            position: relative;
+            transform: translate(0) rotate(0);
+            /* z-index: 9; */
+            /* animation: ss 4s ease forwards; */
+        }
+
+        @keyframes mm {
+            from{
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes mm1{
+            0%{
+                transform:translate(0px) rotate(0deg) ;
+                opacity: 1;
+            }
+            25%{
+                transform: translate(50px) rotate(90deg) ;
+                /* opacity: 0; */
+            }
+            50%{
+                transform: translate(100px) rotate(135deg) ;
+            }
+            75%{
+                transform: translate(150px) rotate(175deg) ;
+            }
+            100%{
+                transform: translate(200px) rotate(200deg) ;
+                opacity: 0;
+            }
+        }
+
+
+        .effect9:hover .img5 {
+            animation: mm1 .5s linear forwards;
+            
+        }
+  
+        .effect9:hover .mask8 {
+            animation: mm .5s .15s linear forwards;
+        }
+
+
+
     </style>
 </body>
 

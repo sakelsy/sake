@@ -5,26 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>找色块</title>
     <link rel="stylesheet" href="./minireset.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="stage">
-
-    </div>
-    <div class="ke">
-        <div class="mask">
-            <h3>游戏结束</h3>
-            <button>重新开始</button>
+        <div class="qun"></div>
+        <div class="ke">
+            <div class="mask">
+                <h3>游戏结束</h3>
+                <button>重新开始</button>
+            </div>
         </div>
     </div>
-
     <style>
-        body{
-            background-image: linear-gradient(80deg,rgb(222, 121, 121),rgb(209, 160, 114));
+        body {
+            background-image: linear-gradient(80deg, rgb(222, 121, 121), rgb(209, 160, 114));
             height: 100vh;
+        }
+
+        .qun{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px auto;
         }
         .stage {
 
@@ -39,10 +50,10 @@
 
         .ke {
             position: absolute;
-            width: 510px;
-            height: 500px;
+            width: 100%;
+            height: 100%;
             top: 30px;
-            left: 510px;
+            left: 0px;
             background-color: #3f51b5be;
             display: none;
         }
@@ -74,7 +85,7 @@
         }
     </style>
     <script>
-        var stage = document.querySelector('.stage');
+        var stage = document.querySelector('.qun');
         var level = 1
 
         function showFot(level) {
@@ -95,7 +106,7 @@
                     level++;
                     showFot(level);
                 } else {
-                   $(".ke").css("display","block")
+                    $(".ke").css("display", "block")
                 }
 
             })

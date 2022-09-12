@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <div class="stage"></div>
+    <div class="control">
+        <a class="a a1" href="">link1</a>
+        <a class="a a2" href="">link2</a>
+        <a class="a a3" href="">link3</a>
+        <a class="a a4" href="">link4</a>
+        <a class="a a5" href="">link5</a>
+        <a class="a a6" href="">link6</a>
+    </div>
+    <div class="zs">
+        <span class="span span1"></span>
+        <span class="span span2"></span>
+        <span class="span span3"></span>
+        <span class="span span4"></span>
+        <span class="span span5"></span>
+        <span class="span span6"></span>
+    </div>
+
+    <style>
+        body {
+            background-color: #c0392b;
+            
+        }
+
+        .stage {
+            border: 4.4352px solid white;
+            width: 422.4px;
+            height: 422.4px;
+            border-radius: 211.2px;
+            position: absolute;
+            top: -42.24px;
+            left: -211.2px;
+        }
+
+        .a {
+            color: aliceblue;
+            text-decoration: none;
+            position: absolute;
+            z-index: 100;
+            font-size: 25px;
+            height: 52.8px;
+            transform-origin: 0px 26.4px;
+            left: 4.4352px;
+            top: 145.235px;
+            padding-left: 253.44px;
+            font-size: 25.344px;
+        }
+
+        span {
+            position: absolute;
+            display: inline-block;
+            z-index: 50;
+            opacity: 0;
+            left: 4.4352px;
+            transform-origin: 0px 26.4px;
+            transition: all 0.2s ease-out 0s;
+            top: 145.235px;
+            width: 213.418px;
+            height: 52.8px;
+            border-right: 8.8704px solid rgb(255, 255, 255);
+        }
+
+
+        .a1,
+        .span1 {
+            transform: rotate(-24deg);
+        }
+
+        .a2,
+        .span2 {
+            transform: rotate(-14.4deg);
+        }
+
+        .a3,
+        .span3 {
+            transform: rotate(-4.8deg);
+        }
+
+
+        .a4,
+        .span4 {
+            transform: rotate(4.8deg);
+        }
+
+        .a5,
+        .span5 {
+            transform: rotate(14.4deg);
+        }
+
+        .a6,
+        .span6 {
+            transform: rotate(24deg);
+        }
+    </style>
+
+    <script>
+        var links = ['#c0392b',
+            '#16a085',
+            '#8e44ad',
+            '#27ae60',
+            '#f39c12',
+            '#2980b9'];
+        $("a").mouseenter(function () {
+            $(this).css({
+                paddingLeft: 263.44
+            }).siblings().css({
+                paddingLeft: 253.44
+            })
+            $("body").css({
+                backgroundColor: links[$(this).index()]
+            })
+            console.log($(this).index());
+            $(".zs").children().eq($(this).index()).css({
+                opacity: 1,
+            }).siblings().css({
+                opacity: 0,
+            })
+        })
+        $("a").mouseleave(function () {
+            $(this).css({
+                paddingLeft: 253.44
+            })
+            $(".zs").children().eq($(this).index()).css({
+                opacity: 0,
+            })
+        })
+    </script>
+</body>
+
+</html>

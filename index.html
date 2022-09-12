@@ -71,10 +71,11 @@
 
         .list .card {
             width: 1000px;
-            
+
         }
-        .card.active{
-           animation: yy 1s forwards;
+
+        .card.active {
+            animation: yy 1s forwards;
         }
 
         .list .card .content {
@@ -142,7 +143,7 @@
             from {
                 display: none;
                 transform: scale(0) rotate(0);
-                
+
             }
 
             to {
@@ -172,14 +173,22 @@
             background-image: url(./img/plastic.PNG);
 
         }
-
         .list .card1 li:nth-of-type(4) {
-            background-image: url(./img/kindly.PNG);
+            background-image: url(./img/cool.PNG);
 
         }
 
         .list .card1 li:nth-of-type(5) {
+            background-image: url(./img/kindly.PNG);
+
+        }
+
+        .list .card1 li:nth-of-type(6) {
             background-image: url(./img/yoga.PNG);
+
+        }
+        .list .card1 li:nth-of-type(7) {
+            background-image: url(./img/携程静态网站.PNG);
 
         }
 
@@ -231,11 +240,29 @@
 
         }
         .list .card2 li:nth-of-type(10) {
-            background-image: url(./img/sjld.PNG);
+            background-image: url(./img/szsz.PNG);
 
         }
         .list .card2 li:nth-of-type(11) {
+            background-image: url(./img/菜单.PNG);
+
+        }
+
+
+
+
+        .list .card7 li:nth-of-type(1) {
+            background-image: url(./img/sjld.PNG);
+
+        }
+
+        .list .card7 li:nth-of-type(2) {
             background-image: url(./img/bzzz.PNG);
+
+        }
+        
+        .list .card7 li:nth-of-type(3) {
+            background-image: url(./img/baidu.PNG);
 
         }
 
@@ -259,6 +286,10 @@
             background-image: url(./img/zsk.PNG);
 
         }
+        .list .card3 li:nth-of-type(4) {
+            background-image: url(./img/dadishu.PNG);
+
+        }
 
 
 
@@ -276,14 +307,17 @@
             background-image: url(./img/parallax.PNG);
 
         }
+
         .list .card4 li:nth-of-type(4) {
             background-image: url(./img/zd.PNG);
 
         }
+
         .list .card4 li:nth-of-type(5) {
             background-image: url(./img/svg.PNG);
 
         }
+
         .list .card4 li:nth-of-type(6) {
             background-image: url(./img/canvse.PNG);
 
@@ -311,6 +345,12 @@
 
         }
 
+        .list .card5 li:nth-of-type(5) {
+            background-image: url(./img/loading3.PNG);
+
+        }
+
+
 
 
 
@@ -323,13 +363,22 @@
             background-image: url(./img/progressbar.PNG);
 
         }
+        .list .card6 li:nth-of-type(3) {
+            background-image: url(./img/3dtupian.PNG);
+
+        }
+        .list .card6 li:nth-of-type(4) {
+            background-image: url(./img/3dwenzi.PNG);
+
+        }
 
         .card1.card2,
         .card2,
         .card3,
         .card4,
         .card5,
-        .card6 {
+        .card6,
+        .card7 {
             position: absolute;
             top: 0;
             left: 0;
@@ -340,11 +389,13 @@
         .card3,
         .card4,
         .card5,
-        .card6 {
+        .card6,
+        .card7 {
             display: none;
         }
     </style>
 </head>
+
 <body>
     <div class="bg"></div>
     <div class="stage">
@@ -353,6 +404,7 @@
         <div class="control">
             <span>网页</span>
             <span>js&jq</span>
+            <span>ajax</span>
             <span>小游戏</span>
             <span>H5&css3</span>
             <span>loading&按钮&ihover</span>
@@ -372,10 +424,16 @@
                         <a href="./plastic/plastic.html" target="_blank">整容网页响应式</a>
                     </li>
                     <li>
+                        <a href="./cool/cool.html" target="_blank">炫酷网页响应式</a>
+                    </li>
+                    <li>
                         <a href="./kiddy/kiddy.html" target="_blank">儿童网页静态页面</a>
                     </li>
                     <li>
                         <a href="./yoga/3.html" target="_blank">瑜伽页面静态页面</a>
+                    </li>
+                    <li>
+                        <a href="./xiechenfg/4.html" target="_blank">携程静态页面</a>
                     </li>
                 </div>
 
@@ -391,8 +449,15 @@
                     <li><a href="./js&jq/clock.html" target="_blank">时钟</a></li>
                     <li><a href="./js&jq/dm.html" target="_blank">点名</a></li>
                     <li><a href="./js&jq/fxgz.html" target="_blank">方向感知</a></li>
+                    <li><a href="./js&jq/数字时钟.html" target="_blank">数字时钟</a></li>
+                    <li><a href="./js&jq/菜单.html" target="_blank">菜单</a></li>
+                </div>
+            </ul>
+            <ul class="card card7">
+                <div class="content">
                     <li><a href="./js&jq/city.html" target="_blank">三级联动</a></li>
                     <li><a href="./js&jq/B站.html" target="_blank">B站</a></li>
+                    <li><a href="./js&jq/百度.html" target="_blank">百度搜索联想</a></li>
                 </div>
             </ul>
             <ul class="card card3">
@@ -400,6 +465,7 @@
                     <li><a href="./game/Flip CARDS.html" target="_blank">记忆卡片</a></li>
                     <li><a href="./game/white block.html" target="_blank">别踩白块</a></li>
                     <li><a href="./game/Lookingforacolorpiece.html" target="_blank">找色块</a></li>
+                    <li><a href="./game/打地鼠.html" target="_blank">打地鼠</a></li>
                 </div>
             </ul>
             <ul class="card card4">
@@ -418,12 +484,15 @@
                     <li><a href="./button/ihover.html" target="_blank">ihover</a></li>
                     <li><a href="./loacding/loacding1.html" target="_blank">loacding</a></li>
                     <li><a href="./loacding/loading2.html" target="_blank">3dloacding</a></li>
+                    <li><a href="./loacding/locading3.html" target="_blank">loacding2</a></li>
                 </div>
             </ul>
             <ul class="card card6">
                 <div class="content">
                     <li><a href="./3d/3dalbum.html" target="_blank">3d相册</a></li>
                     <li><a href="./3d/progressbar.html" target="_blank">进度条</a></li>
+                    <li><a href="./3d/3dtupian.html" target="_blank">图片悬停</a></li>
+                    <li><a href="./3d/3d文字.html" target="_blank">3d文字</a></li>
                 </div>
             </ul>
         </div>

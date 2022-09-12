@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D文字</title>
+    <link rel="stylesheet" href="./minireset.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <span style="--i:1">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:2">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:3">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:4">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:5">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:6">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:7">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:8">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:9">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:10">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:11">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+
+            <span style="--i:12">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:13">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:14">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:15">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+            <span style="--i:16">
+                <i>EAT</i>
+                sleep
+                <i>RAVE</i>
+            </span>
+        </div>
+    </div>
+    <style>
+        body {
+            background-color: #222;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            transform-style: preserve-3d;
+            animation: xx 5s infinite alternate;
+        }
+
+        span {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) 90%, transparent);
+            text-transform: uppercase;
+            line-height: 0.76em;
+            position: absolute;
+            color: #fff;
+            font-size: 3.5em;
+            white-space: nowrap;
+            font-weight: bold;
+            padding: 0px 10px;
+            transform-style: preserve-3d;
+            text-shadow: 0 10px 15px rgb(0 0 0 / 30%);
+            transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(109px);
+        }
+
+        .container .box span i:nth-child(1) {
+            color: #5c5fc4;
+        }
+
+        .container .box span i:nth-child(2) {
+            color: #c4c15c;
+        }
+
+        @keyframes xx {
+            from{
+                perspective: 500px;
+                transform: rotate(0) ;
+            }
+            to{
+                perspective: 50px;
+                transform: rotate(360deg) ;
+            }
+        }
+    </style>
+</body>
+
+</html>

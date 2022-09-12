@@ -10,7 +10,7 @@
 
     <!-- 响应式网页必须 -->
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>服装响应式网页</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
@@ -541,32 +541,105 @@
         //     console.log(123);
         // }
 
+        var flag = true;
+
+        $(".mode.hidden-md.hidden-sm.hidden-xs i.fa-moon-o").click(function () {
+            if (flag == true) {
+                console.log(123);
+                $("body").css({
+                    backgroundColor: "black",
+                    color: "white"
+                })
+                $(".count").css({
+                    backgroundColor: "black",
+                })
+                $(".mode.hidden-md.hidden-sm.hidden-xs i.fa-moon-o").attr("class", "fa fa-sun-o")
+                $(".dh").css({
+                    backgroundColor: "black",
+                })
+                $(".dh h2").css("color", "white")
+                $("ul.col-lg-5 li ").children().eq(1).css("color", "white")
+                $("ul.col-lg-5 li ").children().eq(2).css("color", "white")
+                $("ul.col-lg-5 li ").children().eq(3).css("color", "white")
+                $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color", "white")
+                $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color", "white")
+                $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color", "white")
+                flag = false
+            } else {
+                $("body").css({
+                    backgroundColor: "white",
+                    color: "black"
+                })
+                $(".count").css({
+                    backgroundColor: "white",
+                })
+                $(".dh").css({
+                    backgroundColor: "white",
+                })
+                $(".dh h2").css("color", "black")
+                $("ul.col-lg-5 li ").children().eq(1).css("color", "black")
+                $("ul.col-lg-5 li ").children().eq(2).css("color", "black")
+                $("ul.col-lg-5 li ").children().eq(3).css("color", "black")
+                $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color", "black")
+                $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color", "black")
+                $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color", "black")
+                $(".mode.hidden-md.hidden-sm.hidden-xs i.fa-sun-o").attr("class", "fa fa-moon-o")
+                flag = true
+            }
+
+        })
         $(window).on('scroll', () => {
             let $fixedheader = $('#topface');
             var wintop = $(window).scrollTop();
             let winHeight = $(window).height();
             if (wintop > 100) {
-                $(".dh").css({
-                    backgroundColor: " white",
-                })
-                $(".dh h2").css("color","black")
-                $("ul.col-lg-5 li ").children().eq(1).css("color","black")
-                $("ul.col-lg-5 li ").children().eq(2).css("color","black")
-                $("ul.col-lg-5 li ").children().eq(3).css("color","black")
-                $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color","black")
-                $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color","black")
-                $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color","black")
+                // $(".dh").css({
+                //     backgroundColor: " white",
+                // })
+                if (flag == true) {
+                    $(".dh").css({
+                        backgroundColor: " white",
+                    })
+                    $(".dh h2").css("color", "black")
+                    $("ul.col-lg-5 li ").children().eq(1).css("color", "black")
+                    $("ul.col-lg-5 li ").children().eq(2).css("color", "black")
+                    $("ul.col-lg-5 li ").children().eq(3).css("color", "black")
+                    $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color", "black")
+                    $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color", "black")
+                    $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color", "black")
+                } else {
+                    $(".dh ").css("backgroundcolor", "black")
+                    $(".dh h2").css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(1).css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(2).css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(3).css("color", "white")
+                    $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color", "white")
+                    $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color", "white")
+                    $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color", "white")
+                }
             } else {
-                $(".dh").css({
-                    backgroundColor: "transparent",
-                })
-                $(".dh h2").css("color","white")
-                $("ul.col-lg-5 li ").children().eq(1).css("color","white")
-                $("ul.col-lg-5 li ").children().eq(2).css("color","white")
-                $("ul.col-lg-5 li ").children().eq(3).css("color","white")
-                $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color","white")
-                $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color","white")
-                $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color","white")
+                if (flag == true) {
+                    $(".dh").css({
+                        backgroundColor: "transparent",
+                    })
+                    $(".dh h2").css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(1).css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(2).css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(3).css("color", "white")
+                    $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color", "white")
+                    $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color", "white")
+                    $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color", "white")
+                } else {
+                    $(".dh ").css("backgroundcolor", "black")
+                    $(".dh h2").css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(1).css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(2).css("color", "white")
+                    $("ul.col-lg-5 li ").children().eq(3).css("color", "white")
+                    $(".mode.hidden-md.hidden-sm.hidden-xs i").css("color", "white")
+                    $(".mode.col-md-8.col-sm-8.col-xs-8.visible-md.visible-sm.visible-xs i.fa-moon-o ").css("color", "white")
+                    $(".dh .container .row .col-sm-12 .col-lg-4.search-area .search input").css("color", "white")
+                }
+
             }
         })
         console.log($(".dh h2"));
@@ -591,6 +664,7 @@
 
 
         })
+
 
 
     </script>
